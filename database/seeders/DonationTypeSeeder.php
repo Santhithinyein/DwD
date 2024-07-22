@@ -13,11 +13,18 @@ class DonationTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        collect(range(1, 10))->map(function () {
+        // collect(range(1, 10))->map(function () {
+        //     DonationType::create([
+        //         'individual' => fake()->name(),
+        //         'group' => fake()->name(),
+        //     ]);
+        // });
+
+        $types=['individual','group'];
+        foreach ($types as $type) {
             DonationType::create([
-                'individual' => fake()->name(),
-                'group' => fake()->name(),
+                'type'=>$type
             ]);
-        });
+        }
     }
 }

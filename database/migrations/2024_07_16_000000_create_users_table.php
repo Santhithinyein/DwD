@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\DonationType;
 use App\Models\UserType;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -16,12 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('uAddress');
-            $table->double('uPhNo');
-            $table->boolean('status');
+            $table->string('uAddress')->nullable();
+            $table->double('uPhNo')->nullable();
+            $table->boolean('status')->nullable();
             $table->foreignIdFor(UserType::class)->nullable()->constrained()->nullOnDelete();
+            $table->foreignIdFor(DonationType::class)->nullable()->constrained()->nullOnDelete();
             $table->timestamp('email_verified_at')->nullable();
-            // $table->string('password');
+            $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

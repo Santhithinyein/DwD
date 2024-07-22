@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class DonationType extends Model
 {
     use HasFactory;
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
+
+
 }

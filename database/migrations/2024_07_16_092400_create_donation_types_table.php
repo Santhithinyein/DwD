@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('donation_types', function (Blueprint $table) {
             $table->id();
-            $table->string('individual');
-            $table->string('group');
+            $table->string('type');
+            // $table->string('individual');
+            // $table->string('group');
             $table->timestamps();
         });
     }

@@ -31,6 +31,7 @@ class TransactionSeeder extends Seeder
                 'paymentType' => fake()->text(),
                 'receivePhoto' => fake()->imageUrl(),
                 'user_id'=>User::inRandomOrder()->first()->id,
+                'amount'=>1000,
                 'monastery_id'=>Monastery::inRandomOrder()->first()->id,
                
             ]);

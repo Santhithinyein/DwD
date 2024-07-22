@@ -36,10 +36,10 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(UserTypeSeeder::class);
+        $this->call(DonationTypeSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(UserCListSeeder::class);
         $this->call(MonasterySeeder::class);
-        $this->call(DonationTypeSeeder::class);
         $this->call(TransactionSeeder::class);
 
 

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\DonationType;
 use App\Models\User;
 use App\Models\UserType;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -21,10 +22,19 @@ class UserSeeder extends Seeder
                 'uAddress'=>fake()->address(),
                 'uPhNo'=>'09442111788',
                 'status'=>fake()->boolean(),
-                'user_type_id'=>UserType::inRandomOrder()->first()->id,
+                'user_type_id'=>2,
+                'donation_type_id'=>DonationType::inRandomOrder()->first()->id,
                 'email_verified_at' => now(),
-                // 'password' => static::$password ??= Hash::make('password'),
+                'password' => 23456789,
             ]);
         });
+
+        User::create([
+            'name' =>'Admin',
+            'email' => 'admin@gmail.com',
+            'user_type_id'=>1,
+            'email_verified_at' => now(),
+            'password' => 23456789,
+        ]);
     }
 }
