@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-yellow-100 p-8">
+    
+</body>
+</html> --}}
+<x-admin-layout>
     <div class="container mx-auto w-2/5 content-center">
         <h1 class="text-2xl font-bold mb-6">Add Monastery</h1>
         <form action="{{ route('monasteries.store') }}" method="POST" class="bg-white p-6 rounded-lg shadow-md">
@@ -53,5 +57,4 @@
             </div>
         </form>
     </div>
-</body>
-</html>
+</x-admin-layout>

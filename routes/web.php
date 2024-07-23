@@ -4,6 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MonasteryController;
 
 
+Route::get('/admin',function(){
+    return view('admin.index');
+    
+});
+
+
 // Route::resource('monasteries', MonasteryController::class);
 
 Route::get('/', [MonasteryController::class, 'index'])->name('monasteries.index');
