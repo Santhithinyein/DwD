@@ -12,6 +12,7 @@
           extend: {
             colors: {
               clifford: '#da373d',
+              admin:'#962f13'
             }
           }
         }
@@ -26,10 +27,7 @@
             {{$slot}}
             
         </div>
-        <div class="w-80 bg-red-500">
-            <p>Hello</p>
-            
-        </div>
+        <x-admin-event/>
     </div>
     
 </body>

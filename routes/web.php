@@ -2,12 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MonasteryController;
-
+use App\Http\Controllers\UserController;
 
 Route::get('/admin',function(){
     return view('admin.index');
     
-});
+})->name('dashboard');
 
 
 // Route::resource('monasteries', MonasteryController::class);
@@ -18,6 +18,10 @@ Route::post('/monasteries', [MonasteryController::class, 'store'])->name('monast
 Route::get('/monasteries/{monastery}/edit', [MonasteryController::class, 'edit'])->name('monasteries.edit');
 Route::put('/monasteries/{monastery}', [MonasteryController::class, 'update'])->name('monasteries.update');
 Route::delete('/monasteries/{monastery}', [MonasteryController::class, 'destroy'])->name('monasteries.destroy');
+
+Route::get('/users',[UserController::class,'index'])->name('users');
+Route::get('/doners',[UserController::class,'show'])->name('doners');
+
 
 
 
