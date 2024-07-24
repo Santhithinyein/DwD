@@ -12,7 +12,9 @@
           extend: {
             colors: {
               clifford: '#da373d',
-              admin:'#962f13'
+              gingerRed: '#B83C08',
+              redFox:'#C35817',
+              
             }
           }
         }
@@ -20,10 +22,10 @@
     </script>
 </head>
 <body>
-    <div class="h-screen flex">
+    <div class="h-screen flex ">
         <x-admin-sidebar/>
         
-        <div class="w-3/4 bg-white">
+        <div class="w-3/4 bg-white main ">
             {{$slot}}
             
         </div>

@@ -12,49 +12,51 @@
 </body>
 </html> --}}
 <x-admin-layout>
-    <div class="container mx-auto w-2/5 content-center">
-        <h1 class="text-2xl font-bold mb-6">Edit Monastery</h1>
-        <form action="{{ route('monasteries.update', $monastery->id) }}" method="POST" class="bg-white p-6 rounded-lg shadow-md">
+    <div class="container mx-auto w-3/5 content-center">
+        <h1 class="text-3xl font-bold mb-6 mt-8">Edit Monastery</h1>
+        <form action="{{ route('monasteries.update', $monastery->id) }}" method="POST" class="bg-white p-6 rounded-lg shadow-md mt-8">
             @csrf
             @method('PUT')
-            <div class="mb-4">
-                <label class="block text-gray-700">Monastery Name:</label>
-                <input type="text" name="monasteryName" value="{{ $monastery->monasteryName }}" class="w-full p-2 border rounded">
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700">Monk Name:</label>
-                <input type="text" name="monkName" value="{{ $monastery->monkName }}" class="w-full p-2 border rounded">
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700">Address:</label>
-                <input type="text" name="address" value="{{ $monastery->address }}" class="w-full p-2 border rounded">
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700">Phone Number:</label>
-                <input type="text" name="phNo" value="{{ $monastery->phNo }}" class="w-full p-2 border rounded">
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700">Building:</label>
-                <input type="text" name="building" value="{{ $monastery->building }}" class="w-full p-2 border rounded">
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700">Monk Number:</label>
-                <input type="text" name="monkNo" value="{{ $monastery->monkNo }}" class="w-full p-2 border rounded">
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700">Status:</label>
-                <select name="mStatus" class="w-full p-2 border rounded">
-                    <option value="1" {{ $monastery->mStatus == 1 ? 'selected' : '' }}>Active</option>
-                    <option value="0" {{ $monastery->mStatus == 0 ? 'selected' : '' }}>Inactive</option>
-                </select>
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700">Photo:</label>
-                <input type="text" name="photo" value="{{ $monastery->photo }}" class="w-full p-2 border rounded">
+            <div class="grid grid-cols-2 gap-4">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-lg">Monastery Name:</label>
+                    <input type="text" name="monasteryName" value="{{ $monastery->monasteryName }}" class="w-full p-2 border-b-2 border-red-500">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-lg">Monk Name:</label>
+                    <input type="text" name="monkName" value="{{ $monastery->monkName }}" class="w-full p-2 border-b-2 border-red-500">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Address:</label>
+                    <input type="text" name="address" value="{{ $monastery->address }}" class="w-full p-2 border-b-2 border-red-500">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-lg">Phone Number:</label>
+                    <input type="text" name="phNo" value="{{ $monastery->phNo }}" class="w-full p-2 border-b-2 border-red-500">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-lg">Building:</label>
+                    <input type="text" name="building" value="{{ $monastery->building }}" class="w-full p-2 border-b-2 border-red-500">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-lg">Monk Number:</label>
+                    <input type="text" name="monkNo" value="{{ $monastery->monkNo }}" class="w-full p-2 border-b-2 border-red-500">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-lg border-b-2 border-red-500">Status:</label>
+                    <select name="mStatus" class="w-full p-2 border rounded">
+                        <option value="1" {{ $monastery->mStatus == 1 ? 'selected' : '' }}>Active</option>
+                        <option value="0" {{ $monastery->mStatus == 0 ? 'selected' : '' }}>Inactive</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-lg">Photo:</label>
+                    <input type="text" name="photo" value="{{ $monastery->photo }}" class="w-full p-2 border-b-2 border-red-500">
+                </div>
             </div>
             <div class="flex space-x-2">
-                <button type="submit" class="bg-yellow-500 text-white px-4 py-2 rounded">Update</button>
-                <a href="{{ route('monasteries.index') }}" class="bg-yellow-500 text-white px-4 py-2 rounded">Back</a>
+                <button type="submit" class="bg-orange-950 text-white px-4 py-2 rounded">Update</button>
+                <a href="{{ route('monasteries.index') }}" class="bg-orange-800 text-white px-4 py-2 rounded">Back</a>
             </div>
         </form>
     </div>

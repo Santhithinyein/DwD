@@ -12,9 +12,11 @@ class MonasteryController extends Controller
         $search = $request->input('search');
         $monasteries = Monastery::query()
             ->when($search, function($query, $search) {
-                return $query->where('monasteryName', 'LIKE', "%{$search}%");
+                return $query->where('monasteryName', 'LIKE', "%{$search}%")
+                             ->orWhere('monkName', 'LIKE', "%{$search}%")
+                             ->orWhere('address', 'LIKE', "%{$search}%");
             })
-            ->get();
+            ->paginate(6); // Use paginate instead of get
 
         return view('monastery.index', compact('monasteries', 'search'));
     }
@@ -23,6 +25,7 @@ class MonasteryController extends Controller
     {
         return view('monastery.create');
     }
+
     public function store(Request $request)
     {
         $data = $request->validate([
@@ -35,11 +38,11 @@ class MonasteryController extends Controller
             'mStatus' => 'required|boolean', // Ensure this validates as boolean
             'photo' => 'required|string',
         ]);
-    
+
         $data['mStatus'] = (bool)$request->input('mStatus');
-    
+
         Monastery::create($data);
-    
+
         return redirect()->route('monasteries.index');
     }
 
@@ -48,25 +51,24 @@ class MonasteryController extends Controller
         return view('monastery.edit', compact('monastery'));
     }
 
-  
     public function update(Request $request, Monastery $monastery)
     {
-    $data = $request->validate([
-        'monasteryName' => 'required|string',
-        'monkName' => 'required|string',
-        'address' => 'required|string',
-        'phNo' => 'required|numeric',
-        'building' => 'required|integer',
-        'monkNo' => 'required|integer',
-        'mStatus' => 'required|boolean', // Ensure this validates as boolean
-        'photo' => 'required|string',
-    ]);
+        $data = $request->validate([
+            'monasteryName' => 'required|string',
+            'monkName' => 'required|string',
+            'address' => 'required|string',
+            'phNo' => 'required|numeric',
+            'building' => 'required|integer',
+            'monkNo' => 'required|integer',
+            'mStatus' => 'required|boolean', // Ensure this validates as boolean
+            'photo' => 'required|string',
+        ]);
 
-    $data['mStatus'] = (bool)$request->input('mStatus');
+        $data['mStatus'] = (bool)$request->input('mStatus');
 
-    $monastery->update($data);
+        $monastery->update($data);
 
-    return redirect()->route('monasteries.index');
+        return redirect()->route('monasteries.index');
     }
 
     public function destroy(Monastery $monastery)
@@ -74,10 +76,6 @@ class MonasteryController extends Controller
         $monastery->delete();
         return redirect()->route('monasteries.index');
     }
-
-   
-
-
-
 }
+
 
