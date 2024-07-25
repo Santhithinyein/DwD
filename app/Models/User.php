@@ -49,12 +49,15 @@ class User extends Authenticatable
         return $this->hasMany(Transaction::class);
     }
 
-    public function donationType()
-    {
-        return $this->belongsTo(DonationType::class);
-    }
+   
 
     public function userType(){
         return $this->belongsTo(UserType::class);
     }
+
+    public function userCLists(){
+        return $this->hasMany(userCList::class);
+    }
+
+   
 }

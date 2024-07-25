@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\DonationType;
 use App\Models\Monastery;
+use App\Models\TransactionType;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,11 +17,13 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->string('paymentType');
-            $table->string('receivePhoto');
-            $table->double('amount');
+            $table->double('receiveNo');
             $table->foreignIdFor(User::class)->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(Monastery::class)->nullable()->constrained()->nullOnDelete();
+            $table->foreignIdFor(DonationType::class)->nullable()->constrained()->nullOnDelete();
+            $table->foreignIdFor(TransactionType::class)->nullable()->constrained()->nullOnDelete();
+            $table->string('receivePhoto');
+            $table->double('amount');
             $table->timestamps();
         });
     }

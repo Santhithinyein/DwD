@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\DonationType;
+use App\Models\TransactionType;
 use App\Models\User;
+use App\Models\UserCList;
 use App\Models\UserType;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -23,7 +25,6 @@ class UserSeeder extends Seeder
                 'uPhNo'=>'09442111788',
                 'status'=>fake()->boolean(),
                 'user_type_id'=>2,
-                'donation_type_id'=>DonationType::inRandomOrder()->first()->id,
                 'email_verified_at' => now(),
                 'password' => 23456789,
             ]);

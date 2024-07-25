@@ -21,7 +21,6 @@ return new class extends Migration
             $table->double('uPhNo')->nullable();
             $table->boolean('status')->nullable();
             $table->foreignIdFor(UserType::class)->nullable()->constrained()->nullOnDelete();
-            $table->foreignIdFor(DonationType::class)->nullable()->constrained()->nullOnDelete();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->rememberToken();

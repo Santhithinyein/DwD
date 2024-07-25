@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\DonationType;
 use App\Models\Monastery;
 use App\Models\Transaction;
+use App\Models\TransactionType;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -28,12 +30,14 @@ class TransactionSeeder extends Seeder
        
         collect(range(1, 10))->map(function () {
             Transaction::create([
-                'paymentType' => fake()->text(),
-                'receivePhoto' => fake()->imageUrl(),
+                'receiveNo'=>24000001,
                 'user_id'=>User::inRandomOrder()->first()->id,
-                'amount'=>1000,
                 'monastery_id'=>Monastery::inRandomOrder()->first()->id,
-               
+                'donation_type_id'=>DonationType::inRandomOrder()->first()->id,
+                'transaction_type_id'=>TransactionType::inRandomOrder()->first()->id,
+                'receivePhoto' => fake()->imageUrl(),
+                'amount'=>1000,
+                
             ]);
         });
     }
