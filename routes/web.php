@@ -16,6 +16,7 @@ Route::get('/admin',function(){
 // web.php
 
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\MonasteryUserController;
 
 // Route::get('/donation/create', [DonationController::class, 'create'])->name('donation.create');
 // Route::get('/donation/monasteries', [DonationController::class, 'monasteries'])->name('donation.monasteries');
@@ -37,6 +38,15 @@ Route::delete('/monasteries/{monastery}', [MonasteryController::class, 'destroy'
 
 Route::get('/users',[UserController::class,'index'])->name('users');
 Route::get('/doners',[UserController::class,'show'])->name('doners');
+
+// =============== user route ===============
+// Route::get('/home')->name('home');
+
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
+Route::get('/donate',[DonationController::class,'index'])->name('donate');
+Route::get('/monastery',[MonasteryUserController::class,'index'])->name('userMonastery');
 
 
 

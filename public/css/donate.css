@@ -1,0 +1,71 @@
+#signup,#donate,#signin,#upload{
+    display:none;
+}
+
+input:focus~label,
+input:valid~label {
+    top: -0.3125rem;
+    /* Adjusts to match the equivalent of -5px */
+}
+
+
+
+/*  upload images */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.image{
+    width: 100%;
+    height: 80vh;
+    /* background: #d1d1d1; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    width: 400px;
+    /* background: #fff; */
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    /* color: #000; */
+}
+
+.card h1{
+    font-size: 30px;
+    color: #921f01;
+}
+
+.card img{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 70px;
+}
+
+label{
+    font-size: 20px;
+    display: block;
+    width: 200px;
+    border-color: #921f01;
+    color: #921f01;
+    padding: 12px;
+    margin: 10px auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+label:hover{
+    color: #fd5823;
+}
+ .i:hover{
+    color: #fd5823;
+ }

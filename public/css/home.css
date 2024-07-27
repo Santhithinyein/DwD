@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,
+body{
+    font-family: "Roboto", sans-serif;
+    height: 100vh;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    max-width: 80%;
+    margin: auto;
+}
+
+.head_container{
+    max-width: 90%;
+    margin: auto;
+}
+/* ---- header ---- */
+header{
+    height: 8vh;
+    background: transparent;
+}
+
+.logo img{
+    width: 120px;
+}
+
+header nav{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.hambuger{
+    display: none;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+header ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul li{
+    margin-left: 3rem;
+}
+
+header ul li a{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: blue;
+    transition: 0.5s;
+}
+
+header ul li a:hover{
+    color: #C1B086;
+}
+
+@media only screen and (max-width: 768px){
+    header ul {
+        display: block;
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.5s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+        z-index: 20;
+    }
+
+    header ul.active{
+        left: 0%;
+    }
+
+    header ul li{
+        margin: 2.5rem 0;
+    }
+
+    header ul li a{
+        color: black;
+    }
+
+    .hambuger{
+        display: block;
+        cursor: pointer;
+    }
+
+    .hambuger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .hambuger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hambuger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* ---- header ---- */
+
+/* ---- home ---- */
+
+.home .image img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 80%;
+}
+
+.home .text{
+    max-width: 80%;
+    color: white;
+    /* margin: 12% 0 0 10%; */
+}
+
+.home h5{
+    font-size:50px;
+    font-weight: 400;
+    margin: 8% 0 0 10%;
+}
+.home p{
+    font-size:70px;
+    font-weight: 800;
+    margin: 1% 0 0 10%;
+}
+
+.DBtn{
+    padding: 10px 20px;
+    background: none;
+    outline: none;
+    border:2px solid white;
+    border-radius: 50px;
+    color: white;
+    margin-top: 10px;
+    margin-bottom:5.5%;
+    
+}
+
+.home button{
+    margin-left: 10%;
+}
+/* ---- home ---- */
+
+/* ---- time ---- */
+
+.flex{
+    display: flex;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    margin-left: 120px;
+}
+
+.launch-time{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.launch-time .tt {
+    flex-basis: 100px;
+    padding-left: 70px;
+}
+
+.launch-time .tt p{
+    font-size: 40px;  /* 60px */
+    margin-bottom: -14px;
+    
+}
+
+.launch-time .tt1 {
+    flex-basis: 100px;
+    padding-left: 90px;
+}
+
+.launch-time .tt1 p{
+    font-size: 40px; /* 60px */
+    margin-bottom: -14px;
+}
+
+.time .input{
+    background: #fff;
+    padding: 10px 20px 10px 20px; /* 20,20,40,20*/
+    border: 1px solid black; 
+}
+
+.upcome p {
+    white-space: nowrap;
+    padding-left: 90px;
+}
+
+/* ---- book ---- */
+
+/* ---- footer ---- */
+.footer{
+    margin-top: .8%;
+    width: 100%;
+    height: 3vh;
+    color: #fff;
+}
+
+.footer-container{
+    /* background-color: aqua; */
+    padding: 10px 20px 10px 20px;
+}
+
+.footer-container p{
+    text-align: center;
+}
+
+/* ---- footer ---- */
