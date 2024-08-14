@@ -17,7 +17,7 @@
 <section class="parent-section">
     <!-- m1 -->
     <div class="card flex flex-col lg:flex-row mx-10 rounded-lg md:mx-20 lg:mx-52 bg-white">
-        <img src="/photo/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2">
 
@@ -43,7 +43,7 @@
 
     <!-- m2 -->
     <div class="card flex flex-col lg:flex-row mx-10 rounded-lg md:mx-20 lg:mx-52 bg-white mt-5">
-        <img src="/photo/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2">
 
@@ -69,7 +69,7 @@
 
     <!-- m3 -->
     <div class="card flex flex-col lg:flex-row mx-10 rounded-lg md:mx-20 lg:mx-52 bg-white mt-5">
-        <img src="/photo/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2">
 
@@ -95,7 +95,7 @@
 
     <!-- m4 -->
     <div class="card flex flex-col lg:flex-row mx-10 rounded-lg md:mx-20 lg:mx-52 bg-white mt-5">
-        <img src="/photo/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2">
 
@@ -121,7 +121,7 @@
 
     <!-- m5 -->
     <div class="card flex flex-col lg:flex-row mx-10 rounded-lg md:mx-20 lg:mx-52 bg-white mt-5">
-        <img src="/photo/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2">
 
@@ -147,7 +147,7 @@
 
     <!-- m6 -->
     <div class="card flex flex-col lg:flex-row mx-10 rounded-lg md:mx-20 lg:mx-52 bg-white mt-5">
-        <img src="/photo/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2">
 
@@ -173,7 +173,7 @@
 
     <!-- m7 -->
     <div class="card flex flex-col lg:flex-row mx-10 rounded-lg md:mx-20 lg:mx-52 bg-white mt-5">
-        <img src="/photo/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2">
 
@@ -199,7 +199,7 @@
 
     <!-- m8 -->
     <div class="card flex flex-col lg:flex-row mx-10 rounded-lg md:mx-20 lg:mx-52 bg-white mt-5">
-        <img src="/photo/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2">
 
@@ -225,7 +225,7 @@
 
     <!-- m9 -->
     <div class="card flex flex-col lg:flex-row mx-10 rounded-lg md:mx-20 lg:mx-52 bg-white mt-5">
-        <img src="/photo/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2">
 
@@ -251,7 +251,7 @@
 
     <!-- m10 -->
     <div class="card flex flex-col lg:flex-row mx-10 rounded-lg md:mx-20 lg:mx-52 bg-white mt-5">
-        <img src="/photo/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2">
 
@@ -277,7 +277,7 @@
 
     <!-- m11 -->
     <div class="card flex flex-col lg:flex-row mx-10 rounded-lg md:mx-20 lg:mx-52 bg-white mt-5">
-        <img src="/photo/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2">
 
@@ -303,7 +303,7 @@
 
     <!-- m12 -->
     <div class="card flex flex-col lg:flex-row mx-10 rounded-lg md:mx-20 lg:mx-52 bg-white mt-5">
-        <img src="/photo/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2">
 
@@ -329,7 +329,7 @@
 
     <!-- m13 -->
     <div class="card flex flex-col lg:flex-row mx-10 rounded-lg md:mx-20 lg:mx-52 bg-white mt-5">
-        <img src="/photo/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2">
 
@@ -355,7 +355,7 @@
 
     <!-- m14 -->
     <div class="card flex flex-col lg:flex-row mx-10 rounded-lg md:mx-20 lg:mx-52 bg-white mt-5">
-        <img src="/photo/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2">
 
@@ -381,7 +381,7 @@
 
     <!-- m15 -->
     <div class="card flex flex-col lg:flex-row mx-10 rounded-lg md:mx-20 lg:mx-52 bg-white mt-5">
-        <img src="/photo/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/donate7.jpg" alt="thumbnail" srcset="" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2">
 

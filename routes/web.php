@@ -1,13 +1,11 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MonasteryController;
 use App\Http\Controllers\UserController;
 
-Route::get('/admin',function(){
-    return view('admin.index');
-    
-})->name('dashboard');
+Route::get('/admin',[AdminController::class,'index'])->name('dashboard');
 
 
 // Route::resource('monasteries', MonasteryController::class);
@@ -37,7 +35,13 @@ Route::put('/monasteries/{monastery}', [MonasteryController::class, 'update'])->
 Route::delete('/monasteries/{monastery}', [MonasteryController::class, 'destroy'])->name('monasteries.destroy');
 
 Route::get('/users',[UserController::class,'index'])->name('users');
+Route::post('/mail/{id}',[UserController::class,'sendMail'])->name('mail');
+
+// Route::post('/event',[])->name('event');
+
 Route::get('/doners',[UserController::class,'show'])->name('doners');
+
+
 
 // =============== user route ===============
 // Route::get('/home')->name('home');
