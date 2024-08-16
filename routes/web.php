@@ -1,11 +1,22 @@
 <?php
 
+<<<<<<< Updated upstream
 use App\Http\Controllers\AdminController;
+=======
+use App\Http\Controllers\AboutController;
+>>>>>>> Stashed changes
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MonasteryController;
 use App\Http\Controllers\UserController;
 
+<<<<<<< Updated upstream
 Route::get('/admin',[AdminController::class,'index'])->name('dashboard');
+=======
+Route::get('/admin',function(){
+    return view('admin.index');
+
+})->name('dashboard');
+>>>>>>> Stashed changes
 
 
 // Route::resource('monasteries', MonasteryController::class);
@@ -50,8 +61,10 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 Route::get('/donate',[DonationController::class,'index'])->name('donate');
-Route::get('/monastery',[MonasteryUserController::class,'index'])->name('userMonastery');
-
+Route::get('/monastery',[MonasteryUserController::class,'show'])->name('userMonastery');
+Route::get('/celebrated', [MonasteryUserController::class, 'celebrated'])->name('celebrated');
+Route::get('/uncelebrated', [MonasteryUserController::class, 'uncelebrated'])->name('uncelebrated');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 
 

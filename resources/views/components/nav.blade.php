@@ -10,7 +10,7 @@
     <title>Donating with Devotion</title>
 </head>
 
-<body>
+<body class="bg-gray-200">
     <header class="header" id="navigation-menu">
         <div class="container">
             <nav>
@@ -20,7 +20,7 @@
                     <li><a href="{{route('home')}}" class="nav-link">Home</a></li>
                     <li><a href="{{route('userMonastery')}}" class="nav-link">Monastery</a></li>
                     <li><a href="{{route('donate')}}" class="nav-link">Donation</a></li>
-                    <li><a href="#" class="nav-link">About</a></li>
+                    <li><a href="{{ route('about') }}" class="nav-link">About</a></li>
                     <!-- <li><a href="#" class="nav-link"><i class="fa-solid fa-user"></i></a></li> -->
 
                 </ul>

@@ -17,6 +17,6 @@ class Monastery extends Model
         'building',
         'monkNo',
         'mStatus',
-        'photo'
+        'photo',
     ];
 }

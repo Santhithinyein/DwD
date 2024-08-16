@@ -3,8 +3,8 @@
     <div class="head_container">
         <div class="box">
             <div class="text">
-                <h5 class="text-grey-300">Welcome</h5>
-                <p>Donation with Devotion</p>
+                <h5 class="text-grey-300">Welcome To</h5>
+                <p>Donating with Devotion</p>
                 <button type="submit" class="DBtn">Donate Now</button>
             </div>
         </div>
@@ -52,7 +52,7 @@
             <p id="seconds" class="text-red-800">00</p>
             <span class="text-sm">Seconds</span>
         </div>
-        
+
     </div>
 </section>
 <script src="/js/home.js"></script>

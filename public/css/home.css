@@ -71,9 +71,10 @@ header ul li{
 }
 
 header ul li a{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 100;
     font-weight: 400;
-    color: blue;
+    color: #991b1b;
     transition: 0.5s;
 }
 
@@ -166,7 +167,7 @@ header ul li a:hover{
     color: white;
     margin-top: 10px;
     margin-bottom:5.5%;
-    
+
 }
 
 .home button{
@@ -200,7 +201,7 @@ header ul li a:hover{
 .launch-time .tt p{
     font-size: 40px;  /* 60px */
     margin-bottom: -14px;
-    
+
 }
 
 .launch-time .tt1 {
@@ -216,7 +217,7 @@ header ul li a:hover{
 .time .input{
     background: #fff;
     padding: 10px 20px 10px 20px; /* 20,20,40,20*/
-    border: 1px solid black; 
+    border: 1px solid black;
 }
 
 .upcome p {

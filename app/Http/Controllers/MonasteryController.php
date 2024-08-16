@@ -11,19 +11,20 @@ class MonasteryController extends Controller
     {
         $search = $request->input('search');
         $monasteries = Monastery::query()
-            ->when($search, function($query, $search) {
+            ->when($search, function ($query, $search) {
                 return $query->where('monasteryName', 'LIKE', "%{$search}%")
                              ->orWhere('monkName', 'LIKE', "%{$search}%")
                              ->orWhere('address', 'LIKE', "%{$search}%");
             })
-            ->paginate(6); // Use paginate instead of get
+            ->paginate(10);
 
         return view('monastery.index', compact('monasteries', 'search'));
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        return view('monastery.create');
+       return view('monastery.create');
+
     }
 
     public function store(Request $request)
@@ -35,7 +36,7 @@ class MonasteryController extends Controller
             'phNo' => 'required|numeric',
             'building' => 'required|integer',
             'monkNo' => 'required|integer',
-            'mStatus' => 'required|boolean', // Ensure this validates as boolean
+            'mStatus' => 'required|boolean',
             'photo' => 'required|string',
         ]);
 
@@ -60,7 +61,7 @@ class MonasteryController extends Controller
             'phNo' => 'required|numeric',
             'building' => 'required|integer',
             'monkNo' => 'required|integer',
-            'mStatus' => 'required|boolean', // Ensure this validates as boolean
+            'mStatus' => 'required|boolean',
             'photo' => 'required|string',
         ]);
 
@@ -76,6 +77,7 @@ class MonasteryController extends Controller
         $monastery->delete();
         return redirect()->route('monasteries.index');
     }
+
+
+
 }
-
-
