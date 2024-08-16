@@ -7,10 +7,6 @@ use Illuminate\Http\Request;
 
 class MonasteryUserController extends Controller
 {
-    public function index(){
-        return view("monastery");
-    }
-
     public function show(){
         $monasteries = Monastery::all();
         return view('monastery', compact('monasteries'));
