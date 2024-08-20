@@ -23,5 +23,10 @@ class MonasteryUserController extends Controller
         $monasteries = Monastery::where('mStatus', 0)->get();
         return view('monastery', compact('monasteries'));
     }
-    
+
+    public function search(Request $request) {
+        $monasteries = Monastery::where('monasteryName', 'LIKE', '%' . $request->search . '%')->get();
+        return view('monastery', compact('monasteries'));
+    }
+
 }

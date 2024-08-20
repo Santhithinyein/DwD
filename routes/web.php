@@ -70,6 +70,7 @@ Route::get('/monastery',[MonasteryUserController::class,'show'])->name('userMona
 Route::get('/celebrated', [MonasteryUserController::class, 'celebrated'])->name('celebrated');
 Route::get('/uncelebrated', [MonasteryUserController::class, 'uncelebrated'])->name('uncelebrated');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::post('/search',[MonasteryUserController::class,'search'])->name('search');
 // =======
 
 // Route::get('/monastery',[MonasteryUserController::class,'index'])->name('userMonastery');
