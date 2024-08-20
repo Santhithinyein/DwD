@@ -3,18 +3,33 @@
 {{-- <script src="{{asset('js/donate.js')}}"></script> --}}
 <script src="{{asset('js/uploadphoto.js')}}" defer></script>
 
-@if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
+@if ($errors->any())
+    <div class="alert alert-danger bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
     </div>
 @endif
 
-@if (session('error'))
-    <div class="alert alert-danger">
-        {{ session('error') }}
+@if (session('success') || session('error'))
+    <div id="message-box" class="fixed top-0 left-1/2 transform -translate-x-1/2 mt-6 z-50">
+        <div class="max-w-sm w-full {{ session('success') ? 'bg-green-500' : 'bg-red-500' }} text-white text-center py-3 px-4 rounded-lg shadow-lg">
+            <p>{{ session('success') ?? session('error') }}</p>
+        </div>
     </div>
-@endif
 
+    <script>
+        // Automatically hide the message box after 5 seconds
+        setTimeout(() => {
+            const messageBox = document.getElementById('message-box');
+            if (messageBox) {
+                messageBox.style.display = 'none';
+            }
+        }, 5000);
+    </script>
+@endif
 <div class="container mt-7">
 
     <div class="flex flex-row pl-60 gap-5 mb-9">
@@ -56,6 +71,14 @@
                 <input type="hidden" name="price" id="price" value="{{ $price }}">
                 <div class="image">
                     <div class="card">
+
+                        <div>
+                            <h5 class="text-base md:text-lg text-gray-500 mb-1 pt-5 text-center">
+                                <a href="{{route('cash')}}" class="text-gray-900">&#11164;</a>&nbsp;&nbsp;Upload image
+                            </h5>
+                        </div>
+                       
+
                         <img src="/images/pf1.png" alt="" srcset="" id="profile-pic">
                         <label for="input-file">
                             Upload Image
@@ -63,7 +86,7 @@
                         </label>
                         <input type="file" name="image" accept="image/jpeg, image/png, image/jpg" id="input-file" style="display:none;">
 
-                        <div class="mt-32">
+                        <div class="mt-12 pb-7">
                             <button type="submit" class="text-white bg-red-800 rounded-md w-48 h-12 hover:bg-orange-600">Save Changes</button>
                         </div>
                     </div>
