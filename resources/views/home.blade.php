@@ -5,7 +5,9 @@
             <div class="text">
                 <h5 class="text-grey-300">Welcome To</h5>
                 <p>Donating with Devotion</p>
+                <form action="{{route('donate')}}">
                 <button type="submit" class="DBtn">Donate Now</button>
+            </form>
             </div>
         </div>
     </div>

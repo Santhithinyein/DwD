@@ -65,7 +65,7 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 // <<<<<<< Updated upstream
-Route::get('/donate',[DonationController::class,'index'])->name('donate');
+// Route::get('/donate',[DonationController::class,'index'])->name('donate');
 Route::get('/monastery',[MonasteryUserController::class,'show'])->name('userMonastery');
 Route::get('/celebrated', [MonasteryUserController::class, 'celebrated'])->name('celebrated');
 Route::get('/uncelebrated', [MonasteryUserController::class, 'uncelebrated'])->name('uncelebrated');

@@ -8,7 +8,7 @@
 
         <form action="{{ route('celebrated') }}" method="GET">
             @csrf
-            <button type="submit" class="bg-orange-600 text-red-800 w-20 h-10 border border-red-800 rounded-lg hover:bg-red-800 hover:text-white">Celebrated</button>
+            <button type="submit" class=" text-red-800 w-20 h-10 border border-red-800 rounded-lg hover:bg-red-800 hover:text-white">Celebrated</button>
         </form>
 
         <form action="{{ route('uncelebrated') }}" method="GET">
@@ -66,4 +66,4 @@
     </section>
     </form>
 <x-footer/>
->>>>>>> Stashed changes
+{{-- >>>>>>> Stashed changes --}}

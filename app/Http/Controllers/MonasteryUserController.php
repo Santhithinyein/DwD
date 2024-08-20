@@ -23,4 +23,5 @@ class MonasteryUserController extends Controller
         $monasteries = Monastery::where('mStatus', 0)->get();
         return view('monastery', compact('monasteries'));
     }
+    
 }
