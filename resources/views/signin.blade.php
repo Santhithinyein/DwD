@@ -15,7 +15,7 @@
 
             <div class="flex flex-warp -m-4">
                 <div class="p-4">
-                    <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                    <div class="h-full border-4 border-white border-opacity-60 rounded-lg overflow-hidden">
                         <img src="/images/donate7.jpg" alt="image"
                             class="lg:h-72 md:h-48 w-full object-cover object-center">
                         <div class="p-6">
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <div class="basis-1/4 border border-red-500 bg-white rounded-md">
+        <div class="basis-1/4 border-4 border-white bg-white rounded-md">
 
             <!------------ Sign In------------>
             <form action="{{route('signinPost')}}" method="POST">
@@ -70,12 +70,12 @@
                     </div>
                     <div class="text-sm text-gray-900 text-center font-medium my-2">
                         <p class=" text-black">Don't have an account?
-                            <a href="{{route('signup')}}" class="text-gray-900 no-underline hover:text-blue-700 hover:underline hover:font-semibold" id="signinLink">Sign Up</a>
+                            <a href="{{route('signup')}}" class="text-gray-900 no-underline text-indigo-500 hover:underline hover:font-semibold" id="signinLink">Sign Up</a>
                         </p>
                     </div>
                 </div>
             </form>
-            
+
 
     </div>
 </div>

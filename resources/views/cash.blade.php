@@ -15,7 +15,7 @@
 
             <div class="flex flex-warp -m-4">
                 <div class="p-4">
-                    <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                    <div class="h-full border-4 border-white border-opacity-60 rounded-lg overflow-hidden">
                         <img src="/images/donate7.jpg" alt="image"
                             class="lg:h-72 md:h-48 w-full object-cover object-center">
                         <div class="p-6">
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <div class="basis-1/4 border border-red-500 bg-white rounded-md">
+        <div class="basis-1/4 border-4 border-white bg-white rounded-md">
 
             <!------------ cash ------------>
 
@@ -42,17 +42,17 @@
                     </h5>
                 </div>
                 <div class="flex flex-row gap-2 items-center justify-center mb-5">
-                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="50000" >K 50K</div>
-                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md" data-value="40000" >K 40K</div>
-                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md" data-value="35000" >K 35K</div>
+                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="50000" > 50 MMK</div>
+                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="40000" > 40 MMK</div>
+                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="35000" > 35 MMK</div>
                 </div>
                 <div class="flex flex-row gap-2 items-center justify-center mb-5">
-                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md" data-value="30000" >K 30K</div>
-                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md" data-value="25000" >K 25K</div>
-                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md" data-value="20000" >K 20K</div>
+                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="30000" > 30 MMK</div>
+                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="25000" > 25 MMK</div>
+                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="20000" > 20 MMK</div>
                 </div>
                 <div class="border border-gray-500 px-3 py-2 tracking-widest rounded-md w-10/12 ml-5">
-                    <input type="text" id="donate_rate" name="donate_rate" class="text-sm uppercase bg-transparent border-none outline-none" placeholder="k">
+                    <input type="text" id="donate_rate" name="donate_rate" class="text-sm uppercase bg-transparent border-none outline-none" placeholder="MMK">
                 </div>
                 <div class="mt-36 w-full mb-2 flex items-center justify-center">
                     <button class="bg-blue-500 rounded-lg uppercase font-arial text-sm rounded-md font-semibold text-white py-1 px-16" type="submit" id="DBtn">Donate</button>
@@ -60,7 +60,7 @@
                 <input type="hidden" value="{{$id}}" name="userId">
                 {{-- <input type="hidden" id="hidden_donate_rate" name="hidden_donate_rate"> --}}
             </form>
-            
+
     </div>
 </div>
 </div>

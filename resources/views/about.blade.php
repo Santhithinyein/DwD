@@ -8,16 +8,21 @@
         <div class="grid grid-cols-1 md:grid-cols-2">
             <!-- Card 1 -->
             <div class="overflow-hidden">
-                <div class="ml-20">
-                    <p class="text-red-800 text-lg">
-                        It is a long established fact that a reader will be distracted by the  readable content of a page when looking at its layout. The point of  using Lorem Ipsum is that it has a more-or-less normal distribution of  letters, as opposed to using 'Content here, content here', making it  look like readable English. Many desktop publishing packages and web  page editors now use Lorem Ipsum as their default model text, and a  search for 'lorem ipsum' will uncover many web sites still in their  infancy. Various versions have evolved over the years, sometimes by  accident, sometimes on purpose (injected humour and the like).
+                <div class="ml-40">
+                    <p class="text-red-800 text-2xl">
+                        We are writing this with the purpose of informing about the monasteries that have not yet celebrated in Myanmar's seasonal festival, Kathon Festival, through our website.
+
+It is written with the intention of saving the time spent in the practical search for monasteries that have not yet been established.
+
+
+This website will be donated to the religious department.
                     </p>
                 </div>
             </div>
 
             <!-- Card 2 -->
-            <div class="mr-20">
-                <img src="/Images/vb.jpg" alt="Photo 2" class="w-full h-80">
+            <div class="mr-40">
+                <img src="/Images/vb.jpg" alt="Photo 2" class="w-full h-80 border rounded-lg">
             </div>
         </div>
     </div>

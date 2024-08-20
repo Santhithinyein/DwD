@@ -5,7 +5,7 @@
     <div class="flex flex-row pl-60 gap-5 mb-9">
 
         <!------------ Card Images ------------>
-        <div class="basis-2/5 border border-grey-500 bg-white rounded-md">
+        <div class="basis-2/5 border-4 border-white bg-white rounded-md">
             <div class="flex flex-wrap -m-4">
                 <div class="p-4">
                     <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
@@ -23,7 +23,7 @@
         </div>
 
         <!------------ Payment ------------>
-        <div class="basis-1/4 border border-red-500 bg-white rounded-md">
+        <div class="basis-1/4 border-4 border-white bg-white rounded-md">
             <form id="paymentForm" action="{{ route('upload') }}" method="get">
                 @csrf
                 <div class="text-center mb-5 pt-5">
@@ -39,8 +39,8 @@
 
                 <!-- Kpay Button -->
                 <div class="relative rounded-md flex justify-start items-center p-2">
-                    <button type="button" class="border border-gray-400 rounded-lg mr-8 ml-14" 
-                            style="background-color: #0053ab;" 
+                    <button type="button" class="border border-gray-400 rounded-lg mr-8 ml-14"
+                            style="background-color: #0053ab;"
                             onclick="submitForm('1')">
                         <img src="/images/kpay-remove.png" alt="" class="w-16">
                     </button>
@@ -49,16 +49,16 @@
 
                 <!-- Wave Button -->
                 <div class="relative rounded-md flex justify-start items-center p-2">
-                    <button type="button" class="border border-gray-400 rounded-lg mr-8 ml-14" 
-                            style="background-color: #ffe512;" 
+                    <button type="button" class="border border-gray-400 rounded-lg mr-8 ml-14"
+                            style="background-color: #ffe512;"
                             onclick="submitForm('2')">
                         <img src="/images/wave-remove.png" alt="" class="w-16">
                     </button>
                     <span class="relative z-10">Wave</span>
                 </div>
 
-                <input type="text" 
-                       class="text-sm uppercase bg-transparent border border-gray-500 px-3 py-2 tracking-widest rounded-md w-32 text-center mt-32 ml-20" 
+                <input type="text"
+                       class="text-sm uppercase bg-transparent border border-gray-500 px-3 py-2 tracking-widest rounded-md w-32 text-center mt-32 ml-20"
                        placeholder="{{ $price }}">
 
             <!-- JavaScript -->
@@ -66,16 +66,16 @@
                     function submitForm(paymentType) {
                 // Set the value of the hidden payment type field
                         document.getElementById('paymentType').value = paymentType;
-        
+
                 // Submit the form
                         document.getElementById('paymentForm').submit();
                     }
                 </script>
 
                 {{-- <div class="relative rounded-md flex justify-start items-center p-2">
-                    <a href="{{ route('uploadpay') }}" 
-                       class="border border-gray-400 rounded-lg mr-8 ml-14" 
-                       style="background-color: #0053ab;" 
+                    <a href="{{ route('uploadpay') }}"
+                       class="border border-gray-400 rounded-lg mr-8 ml-14"
+                       style="background-color: #0053ab;"
                        id="kpayBtn">
                         <img src="/images/kpay-remove.png" alt="" class="w-16">
                     </a>
@@ -83,9 +83,9 @@
                 </div>
 
                 <div class="relative rounded-md flex justify-start items-center p-2">
-                    <a href="{{ route('uploadpay') }}" 
-                       class="border border-gray-400 rounded-lg mr-8 ml-14" 
-                       style="background-color: #ffe512;" 
+                    <a href="{{ route('uploadpay') }}"
+                       class="border border-gray-400 rounded-lg mr-8 ml-14"
+                       style="background-color: #ffe512;"
                        id="waveBtn">
                         <img src="/images/wave-remove.png" alt="" class="w-16">
                     </a>
@@ -93,8 +93,8 @@
                 </div> --}}
 
                 {{-- <input type="hidden" value="{{ $id }}" name="userId">
-                <input type="text" 
-                       class="text-sm uppercase bg-transparent border border-gray-500 px-3 py-2 tracking-widest rounded-md w-32 text-center mt-32 ml-20" 
+                <input type="text"
+                       class="text-sm uppercase bg-transparent border border-gray-500 px-3 py-2 tracking-widest rounded-md w-32 text-center mt-32 ml-20"
                        placeholder="{{ $price }}"> --}}
             </form>
         </div>

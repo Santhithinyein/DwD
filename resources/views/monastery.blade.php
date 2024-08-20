@@ -6,7 +6,7 @@
     <!-- Filter Buttons -->
     <div class="flex flex-row space-x-3">
         <form action="{{ route('celebrated') }}" method="GET">
-            <button type="submit" class="text-red-800 w-20 h-10 bg-orange-600 rounded-lg hover:bg-red-800 hover:text-white">Celebrated</button>
+            <button type="submit" class="text-white w-20 h-10 bg-red-800 rounded-lg hover:bg-white hover:text-red-800">Celebrated</button>
         </form>
 
         <form action="{{ route('uncelebrated') }}" method="GET">
@@ -19,7 +19,7 @@
         <form action="{{ route('search') }}" method="POST" style="display: inline"> <!-- Changed method to GET for consistency -->
             @csrf
             <label for="search" class="text-xl text-red-800 p-2">Monastery:</label>
-            <input type="text" name="search" class="w-64 h-10 border border-red-800 rounded-lg shadow-lg text-red-800" placeholder="Search Monastery...">
+            <input type="text" name="search" class="w-64 h-10 border-1 border-red-800 rounded-lg shadow-lg text-red-800" placeholder="  Search Monastery...">
             <button type="submit" class="bg-red-800 w-16 h-10 rounded-lg hover:bg-orange-600 text-white">Search</button>
         </form>
 

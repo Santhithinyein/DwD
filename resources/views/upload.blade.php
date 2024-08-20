@@ -36,15 +36,15 @@
 
         <!------------ Card Images ------------>
 
-        <div class="basis-2/5 bg-white rounded-md">
+        <div class="basis-2/5 bg-white rounded-lg">
             <!-- <div class="text-center mb-12">
                 <h5 class="text-base md:text-lg text-indigo-700 mb-1">Donation with Devotion</h5>
                 <h1 class="text-4xl md:text-4xl text-gray-700 font-semibold">ကိုးသိန်းစာသင်တိုက်</h1>
             </div> -->
 
-            <div class="flex flex-warp -m-4">
+            <div class="flex flex-warp m-4">
                 <div class="p-4">
-                    <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                    <div class="h-full border-4 border-white border-opacity-60 rounded-lg overflow-hidden">
                         <img src="/Images/vb.jpg" alt="image"
                             class="lg:h-72 md:h-48 w-full object-cover object-center">
                         <div class="p-6">
@@ -59,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <div class="basis-1/4 border border-red-500 bg-white rounded-md">
+        <div class="basis-1/4 border-4 border-white bg-white rounded-md">
 
             <!------------ payment ------------>
 
