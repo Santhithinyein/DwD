@@ -1,22 +1,22 @@
 <?php
 
-// <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 use App\Http\Controllers\AdminController;
 // =======
 use App\Http\Controllers\AboutController;
-// >>>>>>> Stashed changes
+>>>>>>> Stashed changes
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MonasteryController;
 use App\Http\Controllers\UserController;
 
 // <<<<<<< Updated upstream
 Route::get('/admin',[AdminController::class,'index'])->name('dashboard');
-// =======
+=======
 Route::get('/admin',function(){
     return view('admin.index');
 
 })->name('dashboard');
-// >>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 
 // Route::resource('monasteries', MonasteryController::class);
@@ -50,9 +50,11 @@ Route::put('/monasteries/{monastery}', [MonasteryController::class, 'update'])->
 Route::delete('/monasteries/{monastery}', [MonasteryController::class, 'destroy'])->name('monasteries.destroy');
 
 Route::get('/users',[UserController::class,'index'])->name('users');
+Route::get('users/export/', [UserController::class, 'export'])->name('users.export');
+
 Route::post('/mail/{id}',[UserController::class,'sendMail'])->name('mail');
 
-// Route::post('/event',[])->name('event');
+Route::post('/event',[])->name('event');
 
 Route::get('/doners',[UserController::class,'show'])->name('doners');
 

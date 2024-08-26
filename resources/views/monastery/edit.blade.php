@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="flex space-x-2">
-                <button type="submit" class="bg-orange-950 text-white px-4 py-2 rounded">Update</button>
+                <button type="submit" class="hover:text-white bg-[#e85d04] px-4 py-2 rounded">Update</button>
                 <a href="{{ route('monasteries.index') }}" class="bg-orange-800 text-white px-4 py-2 rounded">Back</a>
             </div>
         </form>

@@ -19,12 +19,12 @@
     <div class="mx-auto px-4">
         <h1 class="text-3xl font-bold mb-6 mt-8">Monasteries</h1>
         <div class="mb-4 flex items-center justify-between">
-            <a href="{{ route('monasteries.create') }}" class="bg-orange-950 text-white px-4 py-2 rounded hover:bg-orange-800">Add</a>
+            <a href="{{ route('monasteries.create') }}" class=" hover:text-white bg-[#e85d04] px-4 py-2 rounded-lg">Add</a>
             {{-- <a href="{{ route('donation.create') }}" class="bg-orange-950 text-white px-4 py-2 rounded hover:bg-orange-800">Donate</a> --}}
 
             <form action="{{ route('monasteries.index') }}" method="GET" class="flex">
-                <input type="text" name="search" value="{{ request()->input('search') }}" placeholder="Search Monastery" class="w-full p-2 border border-orange-800 rounded">
-                <button type="submit" class="bg-orange-950 text-white px-4 py-2 rounded ml-2 hover:bg-orange-800">Search</button>
+                <input type="text" name="search" value="{{ request()->input('search') }}" placeholder="Search Monastery" class="w-full p-2 border border-orange-700 rounded">
+                <button type="submit" class=" hover:text-white bg-[#e85d04] px-4 py-2 rounded ml-2 ">Search</button>
             </form>
         </div>
 
@@ -46,7 +46,7 @@
                 </thead>
                 <tbody>
                     @foreach($monasteries as $key => $monastery)
-                    <tr>
+                    <tr class="hover:bg-gray-100">
                         <td class="py-2 px-4 border-b">{{ $monasteries->firstItem() + $key }}</td>
                         <td class="py-2 px-4 border-b">{{ $monastery->monasteryName }}</td>
                         <td class="py-2 px-4 border-b">{{ $monastery->monkName }}</td>
@@ -54,7 +54,8 @@
                         <td class="py-2 px-4 border-b">{{ $monastery->phNo }}</td>
                         <td class="py-2 px-4 border-b">{{ $monastery->building }}</td>
                         <td class="py-2 px-4 border-b">{{ $monastery->monkNo }}</td>
-                        <td class="py-2 px-4 border-b">{{ $monastery->mStatus ? 'Active' : 'Inactive' }}</td>
+                        <td class="py-2 px-4 border-b {{ $monastery->mStatus ? 'text-green-400' : 'text-red-400' }}">{{ $monastery->mStatus ? 'Celeberated' : 'Unceleberated' }}</td>
+
                         <td class="py-2 px-4 border-b"><img src="{{ $monastery->photo }}" alt="Photo" class="w-16 h-16"></td>
                         <td class="py-2 px-4 border-b flex space-x-2">
                             <a href="{{ route('monasteries.edit', $monastery->id) }}" class="text-yellow-400 flex items-center justify-center w-15 h-20">

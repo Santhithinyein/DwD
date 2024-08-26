@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\UsersExport;
+use App\Models\Doner;
 use App\Models\Transaction;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Maatwebsite\Excel\Facades\Excel;
+
+use function PHPUnit\Framework\isNull;
 
 class UserController extends Controller
 {
@@ -15,11 +21,7 @@ class UserController extends Controller
         return view('user.index',compact('users'));
     }
 
-    public function show(){
-        $doners=Transaction::get();
-
-        return view('doner.index',compact('doners'));
-    }
+    
 
    
     public function sendMail($id){
@@ -28,13 +30,19 @@ class UserController extends Controller
        
         // dd($user->email);
         
+        
 
-        Mail::send('emails.myDemoMail',['data'=>'You can donate in our event'],function($message) use($user){
+        Mail::send('emails.myDemoMail',['data'=>$user],function($message) use($user){
             $message->to($user->email);
-            $message->subject('Notification for our donation');
+            $message->subject('Donation Receipt for your donation');
         });
 
         return redirect()->back()->with('success','Success');
+    }
+
+    public function export()
+    {
+        return Excel::download(new UsersExport, 'users.xlsx');
     }
 
 }

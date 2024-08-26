@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Exports\DonorsExport;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Doner extends Model
 {
@@ -22,4 +24,6 @@ class Doner extends Model
     public function transactionType(){
         return $this->belongsTo(TransactionType::class);
     }
+
+   
 }

@@ -29,17 +29,44 @@
      body{
       font-family: Arial;
      }
+    
+  #sidebar.collapsed {
+      width: 16rem;
+  }
+
+  #sidebar.collapsed #sidebar-content {
+      display: none;
+  }
+
+  #sidebar.collapsed #sidebar-content .hidden {
+      display: inline;
+  }
+  
+  #sidebar.collapsed #sidebar-content .flex {
+      justify-content: center;
+  }
+
+  #sidebar.collapsed #toggle-btn {
+      display: block;
+  }
+
+
     </style>
 </head>
 <body>
     <div class="flex flex-row h-screen ">
         <x-admin-sidebar/>
         
-        <div class="h-screen overflow-y-auto w-2/3 bg-middle px-5 py-3">
+        {{-- <div class="h-screen overflow-y-auto w-full px-5 py-3 bg-gradient-to-r from-[#e0eafc] to-[#cfdef3] min-h-screen shadow-lg">
             {{$slot}}
             
-        </div>
-        <x-admin-event/>
+        </div> --}}
+        <div class="h-screen overflow-y-auto w-full px-5 py-3 bg-gradient-to-b from-[#f4f8c1] to-[#f19e50] min-h-screen shadow-lg">
+          {{$slot}}
+          
+      </div>
+        
+        {{-- <x-admin-event/> --}}
     </div>
     
 </body>
