@@ -38,6 +38,7 @@ class MonasteryController extends Controller
             'monkNo' => 'required|integer',
             'mStatus' => 'required|boolean',
             'photo' => 'required|string',
+            
         ]);
 
         $data['mStatus'] = (bool)$request->input('mStatus');
