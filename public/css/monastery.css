@@ -1,0 +1,25 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.pagination .page-link {
+    color: #b91c1c; /* Your red color */
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border: 1px solid #b91c1c;
+    border-radius: 0.25rem;
+    text-decoration: none;
+}
+
+.pagination .page-link:hover {
+    background-color: #f97316; /* Hover color */
+    color: white;
+}
+
+.pagination .active .page-link {
+    background-color: #b91c1c;
+    color: white;
+    border-color: #b91c1c;
+}

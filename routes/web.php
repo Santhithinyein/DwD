@@ -1,21 +1,35 @@
 <?php
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 use App\Http\Controllers\AdminController;
-// =======
 use App\Http\Controllers\AboutController;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MonasteryController;
 use App\Http\Controllers\UserController;
 
-// <<<<<<< Updated upstream
+
 Route::get('/admin',[AdminController::class,'index'])->name('dashboard');
+<<<<<<< Updated upstream
 =======
+=======
+
+>>>>>>> Stashed changes
 Route::get('/admin',function(){
     return view('admin.index');
 
 })->name('dashboard');
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+
 >>>>>>> Stashed changes
 
 
@@ -29,6 +43,7 @@ use App\Http\Controllers\MonasteryUserController;
 use App\Http\Controllers\SigninController;
 use App\Http\Controllers\CashController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\QRpaymentController;
 use App\Http\Controllers\UploadController;
 
 // Route::get('/donation/create', [DonationController::class, 'create'])->name('donation.create');
@@ -66,14 +81,14 @@ Route::get('/doners',[UserController::class,'show'])->name('doners');
 Route::get('/home', function () {
     return view('home');
 })->name('home');
-// <<<<<<< Updated upstream
+
 // Route::get('/donate',[DonationController::class,'index'])->name('donate');
 Route::get('/monastery',[MonasteryUserController::class,'show'])->name('userMonastery');
 Route::get('/celebrated', [MonasteryUserController::class, 'celebrated'])->name('celebrated');
 Route::get('/uncelebrated', [MonasteryUserController::class, 'uncelebrated'])->name('uncelebrated');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::post('/search',[MonasteryUserController::class,'search'])->name('search');
-// =======
+
 
 // Route::get('/monastery',[MonasteryUserController::class,'index'])->name('userMonastery');
 Route::get('/donate',[DonationController::class,'index'])->name('donate');
@@ -87,10 +102,13 @@ Route::get('/payments',[PaymentController::class,'index'])->name('payment');
 Route::get('/upload',[UploadController::class,'index'])->name('upload');
 // Route::get('/photoupload',[UploadController::class,'index'])->name('message');
 Route::post('/photoupload',[UploadController::class,'details'])->name('details');
+Route::get('/qrpayment',[QRpaymentController::class,'index'])->name('qrpay');
+
+
 // Route::post('/signin', [SigninController::class, 'authenticate']);
 
 
-// >>>>>>> Stashed changes
+
 
 
 

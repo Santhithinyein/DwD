@@ -8,9 +8,19 @@ use Illuminate\Validation\Rules\Password;
 
 class DonationController extends Controller
 {
-    public function index(){
-        return view("donation");
+    public function index(Request $request)
+    {
+        $status = $request->status; // Use query() to get query parameters
+        // dd($status); // Debugging output
+        if ($status === '1') {
+            return back()->with('success', 'This Monastery had donation.Thanks, for your donation.');
+        }
+    
+        return view('donation');
+    
     }
+    
+
 
     public function store(Request $request){
         $request->validate([

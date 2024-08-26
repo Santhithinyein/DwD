@@ -4,7 +4,7 @@
 <script src="{{asset('js/uploadphoto.js')}}" defer></script>
 
 @if ($errors->any())
-    <div class="alert alert-danger bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+    <div class="alert alert-danger flex justify-center align-items-center left-1/3 bg-red-100 border border-red-400 text-red-700 px-4 py-3 w-80 ml-20 rounded relative">
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
@@ -66,15 +66,15 @@
             <form action="{{ route('details') }}" method="post" enctype="multipart/form-data">
                 @csrf
 
-                <input type="hidden" name="payment" id="paymentType" value="{{$payment}}">
                 <input type="hidden" name="id" id="userId" value="{{ $id }}">
                 <input type="hidden" name="price" id="price" value="{{ $price }}">
+                <input type="hidden" name="payment" id="paymentType" value="{{ $payment }}">
                 <div class="image">
                     <div class="card">
 
                         <div>
                             <h5 class="text-base md:text-lg text-gray-500 mb-1 pt-5 text-center">
-                                <a href="{{route('cash')}}" class="text-gray-900">&#11164;</a>&nbsp;&nbsp;Upload image
+                                <a href="{{route('payment')}}" class="text-gray-900">&#11164;</a>&nbsp;&nbsp;Upload image
                             </h5>
                         </div>
                        

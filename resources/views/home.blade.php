@@ -1,4 +1,4 @@
-<x-nav/>
+<x-homenav/>
 <section class="home" id="home">
     <div class="head_container">
         <div class="box">
@@ -29,17 +29,17 @@
             class="flex flex-col gap-3 py-4 justify-center items-left font-arial text-md font-semibold overflow-hidden truncate">
             <p class="truncate">
                 <span>Upcoming Event :</span>
-                <span class="text-red-800">Kahtain Festival</span>
+                <span class="text-red-800">စုပေါင်းဘုံကထိန်</span>
             </p>
             <p class="truncate">
                 <i class="fa-solid fa-calendar-days text-red-800"></i>
                 <span>Time :</span>
-                <span class="text-red-800">5:23 p.m</span>
+                <span class="text-red-800">၁၅.၁၁.၂၀၂၄ (နေ့လည် ၁ နာရီ)</span>
             </p>
             <p class="truncate">
                 <i class="fa-solid fa-location-dot text-red-800"></i>
                 <span>Place :</span>
-                <span class="text-red-800">Heaven</span>
+                <span class="text-red-800">သီရိခေတ္တသိရိန္ဒရ သာသနာ့ဗိမာန်တော်ကြီး </span>
             </p>
         </div>
         <div class="flex flex-col font-semibold">

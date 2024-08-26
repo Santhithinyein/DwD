@@ -24,7 +24,7 @@
 
         <!------------ Payment ------------>
         <div class="basis-1/4 border-4 border-white bg-white rounded-md">
-            <form id="paymentForm" action="{{ route('upload') }}" method="get">
+            <form id="paymentForm" action="{{ route('qrpay') }}" method="get">
                 @csrf
                 <div class="text-center mb-5 pt-5">
                     <h5 class="text-base md:text-lg text-gray-500 mb-1">
@@ -59,8 +59,9 @@
 
                 <input type="text"
                        class="text-sm uppercase bg-transparent border border-gray-500 px-3 py-2 tracking-widest rounded-md w-32 text-center mt-32 ml-20"
-                       placeholder="{{ $price }}">
+                       placeholder="{{ $price }}" readonly>
 
+                    </form>
             <!-- JavaScript -->
                 <script>
                     function submitForm(paymentType) {
@@ -72,31 +73,8 @@
                     }
                 </script>
 
-                {{-- <div class="relative rounded-md flex justify-start items-center p-2">
-                    <a href="{{ route('uploadpay') }}"
-                       class="border border-gray-400 rounded-lg mr-8 ml-14"
-                       style="background-color: #0053ab;"
-                       id="kpayBtn">
-                        <img src="/images/kpay-remove.png" alt="" class="w-16">
-                    </a>
-                    <span class="relative z-10">Kpay</span>
-                </div>
-
-                <div class="relative rounded-md flex justify-start items-center p-2">
-                    <a href="{{ route('uploadpay') }}"
-                       class="border border-gray-400 rounded-lg mr-8 ml-14"
-                       style="background-color: #ffe512;"
-                       id="waveBtn">
-                        <img src="/images/wave-remove.png" alt="" class="w-16">
-                    </a>
-                    <span class="relative z-10">Wave</span>
-                </div> --}}
-
-                {{-- <input type="hidden" value="{{ $id }}" name="userId">
-                <input type="text"
-                       class="text-sm uppercase bg-transparent border border-gray-500 px-3 py-2 tracking-widest rounded-md w-32 text-center mt-32 ml-20"
-                       placeholder="{{ $price }}"> --}}
-            </form>
+                
+            
         </div>
     </div>
 </div>

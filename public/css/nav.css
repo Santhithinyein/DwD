@@ -74,7 +74,7 @@ header ul li a{
     font-size: 1.3rem;
     font-weight: 100;
     font-weight: 400;
-    color: #fff;
+    color: #000;
     transition: 0.5s;
 }
 
@@ -169,13 +169,6 @@ header ul li a:hover{
     margin-bottom:5.5%;
 
 }
-
-.DBtn:hover {
-    border:2px solid orange;
-    color:orange;
-    transform: scale(1.05); /* Slightly increase size on hover */
-}
-
 
 .home button{
     margin-left: 10%;

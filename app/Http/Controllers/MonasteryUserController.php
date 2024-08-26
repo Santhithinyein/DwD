@@ -7,26 +7,27 @@ use Illuminate\Http\Request;
 
 class MonasteryUserController extends Controller
 {
-    public function show(){
-        $monasteries = Monastery::all();
+    public function show() {
+        // Paginate results with 10 monasteries per page
+        $monasteries = Monastery::paginate(5);
         return view('monastery', compact('monasteries'));
     }
 
-    public function celebrated(){
-        // Use `where` with the correct column name and value
-        $monasteries = Monastery::where('mStatus', 1)->get();
+    public function celebrated() {
+        // Paginate results where 'mStatus' is 1
+        $monasteries = Monastery::where('mStatus', 1)->paginate(5);
         return view('monastery', compact('monasteries'));
     }
 
-    public function uncelebrated(){
-        // Use `where` with the correct column name and value
-        $monasteries = Monastery::where('mStatus', 0)->get();
+    public function uncelebrated() {
+        // Paginate results where 'mStatus' is 0
+        $monasteries = Monastery::where('mStatus', 0)->paginate(5);
         return view('monastery', compact('monasteries'));
     }
 
     public function search(Request $request) {
-        $monasteries = Monastery::where('monasteryName', 'LIKE', '%' . $request->search . '%')->get();
+        // Paginate search results
+        $monasteries = Monastery::where('monasteryName', 'LIKE', '%' . $request->search . '%')->paginate(10);
         return view('monastery', compact('monasteries'));
     }
-
 }

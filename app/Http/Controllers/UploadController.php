@@ -9,10 +9,14 @@ use Illuminate\Support\Facades\Storage;
 class UploadController extends Controller
 {
     public function index(Request $request){
-        $id=$request->id;
-        $price=$request->price;
-        $payment=$request->payment;
-        return view("upload",compact('id','price','payment'));
+
+        $id = $request->id;
+        $price = $request->price;
+        $payment = $request->payment;
+
+    // dd($id, $request->all());
+
+    return view("upload", compact('id', 'price', 'payment'));
     }
 
     public function details(Request $request)
@@ -30,7 +34,9 @@ class UploadController extends Controller
             'transaction_type_id' => $request->payment,
             'receivePhoto' => $request->file('image')->store('uploads', 'public'),
             'amount' => $request->price,
+            
         ]);
+      
 
         // Redirect with success message
         return back()->with(['success' => 'Your donation has been successfully recorded.']);
