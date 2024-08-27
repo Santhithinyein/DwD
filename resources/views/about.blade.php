@@ -8,7 +8,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2">
             <!-- Card 1 -->
             <div class="overflow-hidden">
-                <div class="ml-40">
+                <div class="ml-28">
                     <p class="text-red-800 text-2xl">
                         We are writing this with the purpose of informing about the monasteries that have not yet celebrated in Myanmar's seasonal festival, Kathon Festival, through our website.
 

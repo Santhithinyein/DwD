@@ -1,36 +1,21 @@
 <?php
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AboutController;
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MonasteryController;
 use App\Http\Controllers\UserController;
 
 
 Route::get('/admin',[AdminController::class,'index'])->name('dashboard');
-<<<<<<< Updated upstream
-=======
-=======
 
->>>>>>> Stashed changes
+
+
 Route::get('/admin',function(){
     return view('admin.index');
 
 })->name('dashboard');
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 
->>>>>>> Stashed changes
 
 
 // Route::resource('monasteries', MonasteryController::class);
