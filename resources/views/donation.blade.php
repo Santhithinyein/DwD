@@ -48,6 +48,10 @@
                             </span>
                         @enderror
                     </div>
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
                     <div class="relative w-11/12 h-12 border-b-2 border-gray-700 my-7.5 input-box mb-4">
                         <span class="absolute right-2 top-2 text-xl text-gray-700 leading-14 icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
