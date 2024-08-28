@@ -144,9 +144,9 @@ Thanks,<br>
             <p>Thank you for your generous donation!</p>
         </header>
         <section class="organization-info">
-            <h2>Organization Name</h2>
-            <p>123 Charity Street, Kindness City, 98765</p>
-            <p>Email: contact@organization.org | Phone: (123) 456-7890</p>
+            <h2>Religious Department Pyay</h2>
+            <p>Marn Aung Street, Pyay</p>
+            <p>Email: mora.pyay@gmail.com | Phone: (123) 456-7890</p>
         </section>
         <section class="donor-info">
             <h3>Donor Information</h3>
@@ -155,13 +155,14 @@ Thanks,<br>
         </section>
         <section class="donation-details">
             <h3>Donation Details</h3>
+            <p>Donation Amount: {{$amount}} Ks</p>
             <p>Donation Date: {{$data->created_at}}</p>
-            {{-- <p>Donation Amount: {{$data->amount}} Ks</p> --}}
+            
             {{-- <p>Donation Type: [One-time/Recurring]</p> --}}
         </section>
         
         <footer class="receipt-footer">
-            <p>Thank you for supporting [Organization Name] and our mission.</p>
+            <p>Thank you for supporting Religious Department Pyay and our mission.</p>
             <p>If you have any questions, please contact us at the details above.</p>
         </footer>
     </div>

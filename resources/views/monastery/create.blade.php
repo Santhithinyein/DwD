@@ -62,8 +62,8 @@
                 <div class="mb-4 col-span-2">
                     <label class="block text-orange-800 text-lg">Status:</label>
                     <select name="mStatus" class="w-full p-2 border-b-2 border-red-500">
-                        <option value="1" {{ old('mStatus') == '1' ? 'selected' : '' }}>Active</option>
-                        <option value="0" {{ old('mStatus') == '0' ? 'selected' : '' }}>Inactive</option>
+                        <option value="1" {{ old('mStatus') == '1' ? 'selected' : '' }}>Celebrated</option>
+                        <option value="0" {{ old('mStatus') == '0' ? 'selected' : '' }}>Unceleberated</option>
                     </select>
                     @error('mStatus')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -78,8 +78,9 @@
                 </div>
             </div>
             <div class="flex space-x-2 mt-4 justify-end">
-                <button type="submit" class="bg-orange-950 text-white px-4 py-2 rounded">Add</button>
-                <a href="{{ route('monasteries.index') }}" class="bg-orange-950 text-white px-4 py-2 rounded">Back</a>
+                <button type="submit" class="inline-block px-4 py-2
+                text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600">Add</button>
+                <a href="{{ route('monasteries.index') }}" class="bg-orange-800 text-white px-4 py-2 rounded">Back</a>
             </div>
         </form>
     </div>

@@ -27,12 +27,16 @@ class UserController extends Controller
     public function sendMail($id){
         
         $user=User::where('id',$id)->first();
+        $doner=Doner::where('user_id',$id)->first();
+        $amount=$doner->amount;
+        
+        // dd($user->amount);
        
         // dd($user->email);
         
         
 
-        Mail::send('emails.myDemoMail',['data'=>$user],function($message) use($user){
+        Mail::send('emails.myDemoMail',['data'=>$user,'amount'=>$amount],function($message) use($user){
             $message->to($user->email);
             $message->subject('Donation Receipt for your donation');
         });

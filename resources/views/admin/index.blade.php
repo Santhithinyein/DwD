@@ -50,26 +50,37 @@
                                     {{-- <th class="px-4 py-2">No</th> --}}
                                     <th class="px-4 py-2">Donor</th>
                                     <th class="px-4 py-2">Amount</th>
-                                    <th class="px-4 py-2">Address</th>
+                                    <th class="px-4 py-2">Date</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    {{-- <td class="border px-4 py-2">{{$recentDoner->id}}</td> --}}
-                                    <td class="border px-4 py-2">{{$recentDoner->user->name}}</td>
-                                    <td class="border px-4 py-2">{{$recentDoner->amount}} Ks</td>
-                                    <td class="border px-4 py-2 text-green-600">Pyay</td>
-                                </tr>
+                                @foreach ($recentDoners as $recentDoner)
+                                    <tr>
+                                        {{-- <td class="border px-4 py-2">{{$recentDoner->id}}</td> --}}
+                                        <td class="border px-4 py-2">{{$recentDoner->user->name}}</td>
+                                        <td class="border px-4 py-2">{{$recentDoner->amount}} Ks</td>
+                                        <td class="border px-4 py-2 text-green-600">{{$recentDoner->created_at->format('d-m-Y')}}</td>
+                                    </tr>                                    
+                                @endforeach
                                 <!-- Add more rows as needed -->
                             </tbody>
                         </table>
+                        <div class="flex justify-end mt-2">
+                            <a href="{{ route('doners') }}" class="inline-block px-4 py-2
+                             text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600">
+                                See More
+                            </a>
+                        </div>
+                        
+                        
                     </div>
                 </div>
             </div>
           </div>
       
           <div class="chart-container ml-5" style="position: relative; height:40vh; width:80vw">
-              <button id="download" class="px-4 py-2   hover:text-white bg-[#e85d04]  rounded-lg shadow-lg ml-3 my-2">Download Chart</button>
+              <button id="download" class="inline-block px-4 py-2
+              text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600">Download Chart</button>
       
               <canvas id="myChart"></canvas>
               

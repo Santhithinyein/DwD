@@ -55,6 +55,14 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+        /* styles.css */
+
+.active > a {
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+}
+
 
 
     </style>
@@ -76,7 +84,7 @@
         </div> --}}
         <div class="flex flex-row h-screen ">
       
-          <x-admin-sidebar/>
+          <x-admin-sidebar :user="auth()->user()"/>
           
           
           {{-- <div class="h-screen overflow-y-auto w-full px-5 py-3 bg-gradient-to-b from-[#f4f8c1] to-[#f19e50] min-h-screen shadow-lg">

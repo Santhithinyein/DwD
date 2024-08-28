@@ -1,35 +1,31 @@
-{{-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monasteries</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body class="bg-yellow-100 p-8">
-    
-</body>
-</html> --}}
-
-
 
 <x-admin-layout>
-    <div class="mx-auto px-4">
+    <div class="container mx-auto px-4">
         <h1 class="text-3xl font-bold mb-6 mt-8">Monasteries</h1>
         <div class="mb-4 flex items-center justify-between">
-            <a href="{{ route('monasteries.create') }}" class=" hover:text-white bg-[#e85d04] px-4 py-2 rounded-lg">Add</a>
-            {{-- <a href="{{ route('donation.create') }}" class="bg-orange-950 text-white px-4 py-2 rounded hover:bg-orange-800">Donate</a> --}}
+            <a href="{{ route('monasteries.create') }}" class="inline-block px-4 py-2
+            text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600">Add</a>
+           
+            <form action="{{ route('monasteries.index') }}" method="GET" class="flex items-center space-x-2">
+                <input type="text" name="search" value="{{ request()->input('search') }}" placeholder="Search Monastery" class="w-full p-2 border border-orange-800 rounded">
 
-            <form action="{{ route('monasteries.index') }}" method="GET" class="flex">
-                <input type="text" name="search" value="{{ request()->input('search') }}" placeholder="Search Monastery" class="w-full p-2 border border-orange-700 rounded">
-                <button type="submit" class=" hover:text-white bg-[#e85d04] px-4 py-2 rounded ml-2 ">Search</button>
+                <!-- Dropdown Box for Address -->
+                <select name="address" class="border border-orange-800 rounded h-11">
+                    <option value="">Select Address</option>
+                    @foreach($addresses as $address)
+                        <option value="{{ $address }}" {{ request()->input('address') == $address ? 'selected' : '' }}>
+                            {{ $address }}
+                        </option>
+                    @endforeach
+                </select>
+
+                <button type="submit" class="inline-block px-4 py-2
+                text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600">Search</button>
             </form>
         </div>
 
         <div class="overflow-auto" style="max-height: 500px;overflow-x: scroll;max-width:1200px;">
-            <table class="min-w-full bg-white rounded-lg shadow-md">
+            <table class="min-w-full bg-white rounded-lg shadow-md text-center">
             <thead class="bg-gray-100 sticky top-0 z-10">
                     <tr class="bg-gray-100">
                         <th class="py-2 px-4 border-b">ID</th>
@@ -37,7 +33,7 @@
                         <th class="py-2 px-4 border-b">Monk Name</th>
                         <th class="py-2 px-4 border-b">Address</th>
                         <th class="py-2 px-4 border-b">Phone Number</th>
-                        <th class="py-2 px-4 border-b">Building</th>
+                        {{-- <th class="py-2 px-4 border-b">Building</th> --}}
                         <th class="py-2 px-4 border-b">Monk Number</th>
                         <th class="py-2 px-4 border-b">Status</th>
                         <th class="py-2 px-4 border-b">Photo</th>
@@ -52,11 +48,12 @@
                         <td class="py-2 px-4 border-b">{{ $monastery->monkName }}</td>
                         <td class="py-2 px-4 border-b">{{ $monastery->address }}</td>
                         <td class="py-2 px-4 border-b">{{ $monastery->phNo }}</td>
-                        <td class="py-2 px-4 border-b">{{ $monastery->building }}</td>
+                        {{-- <td class="py-2 px-4 border-b">{{ $monastery->building }}</td> --}}
                         <td class="py-2 px-4 border-b">{{ $monastery->monkNo }}</td>
                         <td class="py-2 px-4 border-b {{ $monastery->mStatus ? 'text-green-400' : 'text-red-400' }}">{{ $monastery->mStatus ? 'Celeberated' : 'Unceleberated' }}</td>
 
                         <td class="py-2 px-4 border-b"><img src="{{ $monastery->photo }}" alt="Photo" class="w-16 h-16"></td>
+                        
                         <td class="py-2 px-4 border-b flex space-x-2">
                             <a href="{{ route('monasteries.edit', $monastery->id) }}" class="text-yellow-400 flex items-center justify-center w-15 h-20">
                                 {{-- <i class="fas fa-edit"></i> --}}
@@ -83,15 +80,16 @@
             </table>
         </div>
 
-        @if(request()->input('search'))
+        @if(request()->input('search') || request()->input('address'))
             <div class="mt-4">
-                <a href="{{ route('monasteries.index') }}" class="bg-yellow-500 text-white px-4 py-2 rounded">Back</a>
+                <a href="{{ route('monasteries.index') }}" class="inline-block px-4 py-2
+                text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600">Back</a>
             </div>
         @endif
 
         <div class="mt-4">
-            <!-- {{ $monasteries->links() }} -->
             {{ $monasteries->links('vendor.pagination.tailwind') }}
         </div>
     </div>
 </x-admin-layout>
+

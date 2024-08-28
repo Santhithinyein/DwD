@@ -9,17 +9,24 @@ class MonasteryController extends Controller
 {
     public function index(Request $request)
     {
-        $search = $request->input('search');
-        $monasteries = Monastery::query()
-            ->when($search, function ($query, $search) {
-                return $query->where('monasteryName', 'LIKE', "%{$search}%")
-                             ->orWhere('monkName', 'LIKE', "%{$search}%")
-                             ->orWhere('address', 'LIKE', "%{$search}%");
-            })
-            ->paginate(10);
+        $query = Monastery::query();
 
-        return view('monastery.index', compact('monasteries', 'search'));
+        if ($request->filled('search')) {
+            $query->where('monasteryName', 'like', '%'.$request->input('search').'%');
+        }
+
+        if ($request->filled('address')) {
+            $query->where('address', $request->input('address'));
+        }
+
+        $monasteries = $query->paginate(10);
+
+        // Get all unique addresses for the dropdown
+        $addresses = Monastery::pluck('address')->unique();
+
+        return view('monastery.index', compact('monasteries', 'addresses'));
     }
+
 
     public function create(Request $request)
     {

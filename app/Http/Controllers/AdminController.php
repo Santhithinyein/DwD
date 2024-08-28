@@ -10,6 +10,7 @@ class AdminController extends Controller
 {
     public function index(){
         // $doners=User::get();
+        $user=auth()->user();
         $doners=Doner::all();
         $total=0;
         foreach ($doners as $doner) {
@@ -17,8 +18,8 @@ class AdminController extends Controller
         }
 
         $donersCount=$doners->count();
-        $recentDoner = Doner::orderBy('created_at', 'desc')->first();
+        $recentDoners = Doner::orderBy('created_at', 'desc')->take(3)->get();
         
-        return view('admin.index',compact('doners','donersCount','total','recentDoner'));
+        return view('admin.index',compact('doners','donersCount','total','recentDoners','user'));
     }
 }

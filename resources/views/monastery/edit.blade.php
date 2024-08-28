@@ -45,8 +45,8 @@
                 <div class="mb-4">
                     <label class="block text-gray-700 text-lg border-b-2 border-red-500">Status:</label>
                     <select name="mStatus" class="w-full p-2 border rounded">
-                        <option value="1" {{ $monastery->mStatus == 1 ? 'selected' : '' }}>Active</option>
-                        <option value="0" {{ $monastery->mStatus == 0 ? 'selected' : '' }}>Inactive</option>
+                        <option value="1" {{ $monastery->mStatus == 1 ? 'selected' : '' }}>Celebrated</option>
+                        <option value="0" {{ $monastery->mStatus == 0 ? 'selected' : '' }}>Uncelebrated</option>
                     </select>
                 </div>
                 <div class="mb-4">
@@ -55,7 +55,8 @@
                 </div>
             </div>
             <div class="flex space-x-2">
-                <button type="submit" class="hover:text-white bg-[#e85d04] px-4 py-2 rounded">Update</button>
+                <button type="submit" class="inline-block px-4 py-2
+                text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600">Update</button>
                 <a href="{{ route('monasteries.index') }}" class="bg-orange-800 text-white px-4 py-2 rounded">Back</a>
             </div>
         </form>
