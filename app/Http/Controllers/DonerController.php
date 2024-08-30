@@ -40,7 +40,7 @@ class DonerController extends Controller
 
     })
     ->orderBy('created_at', 'desc')
-    ->get();
+    ->paginate(10);
    
     
     
@@ -52,7 +52,8 @@ class DonerController extends Controller
 
             $doners=Doner::whereDate('created_at','>=',$start_date)
             ->whereDate('created_at','<=',$end_date)
-            ->get();
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
             return view('doner.index',compact('doners'));
                 
                 

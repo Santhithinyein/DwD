@@ -11,13 +11,30 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QRpaymentController;
 use App\Http\Controllers\SigninController;
+use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified','normal'])->name('dashboard');
 
-Route::get('/dashboard',[AdminController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/superadmin',[SuperAdminController::class,'index'])->middleware(['auth', 'verified','superadmin'])->name('superadmin');
+
+Route::get('/admin',[AdminController::class,'index'])->middleware(['auth', 'verified','admin'])->name('admin');
+
+// Route::get('/superadmin', function () {
+//     return view('admin.index');
+// })->middleware(['auth', 'verified','superadmin'])->name('superadmin');
+
+
+// Route::get('/admin', function () {
+//     return view('welcome');
+// })->middleware(['auth', 'verified','admin'])->name('admin');
+
 
 
 Route::middleware('auth')->group(function () {

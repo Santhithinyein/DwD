@@ -79,9 +79,18 @@
           </div>
       
           <div class="chart-container ml-5" style="position: relative; height:40vh; width:80vw">
-              <button id="download" class="inline-block px-4 py-2
+              <div class="flex space-x-2">
+                <button id="download" class="inline-block px-4 py-2
               text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600">Download Chart</button>
-      
+               <!-- Dropdown for grouping options -->
+                <select id="grouping" onchange="updateChart()" class="bg-white border border-orange-300 text-gray-700 text-sm rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 block w-20 p-2.5 shadow-sm transition duration-200 ease-in-out hover:border-orange-400 hover:shadow-md">
+                    <option value="day">Day</option>
+                    <option value="month">Month</option>
+                    <option value="year">Year</option>
+                </select>
+              </div>
+
+                    
               <canvas id="myChart"></canvas>
               
           </div>
@@ -94,53 +103,87 @@
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       
       <script>
-        // const ctx = document.getElementById('myChart').getContext('2d');
         const canvas = document.getElementById('myChart');
         const ctx = canvas.getContext('2d');
-        // const data = [
-        //     { year: 2010, count: 10 },
-        //     { year: 2011, count: 20 },
-        //     { year: 2012, count: 15 },
-        //     { year: 2013, count: 25 },
-        //     { year: 2014, count: 22 },
-        //     { year: 2015, count: 30 },
-        //     { year: 2016, count: 28 },
-        // ];
-        let data=@json($doners);
-      
-        new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: data.map(row => {
-            const date = new Date(row.created_at);
-            return date.toLocaleDateString('en-GB').replace(/\//g, '-'); // Formats as DD-MM-YYYY
-            }),
-            datasets: [
-            {
-                label: 'Donation Records',
-                backgroundColor: '#22577a',
-                data: data.map(row => row.amount)
-            }
-            ]
-        },
-        options: {
-           
+    
+        // Fetch data from backend
+        let data = @json($doners);
+    
+        // Function to group data by the selected time unit
+        function groupData(data, unit) {
+            const groupedData = {};
+    
+            data.forEach(row => {
+                const date = new Date(row.created_at);
+    
+                // Format the date based on the selected unit
+                let key;
+                if (unit === 'day') {
+                    key = date.toLocaleDateString('en-GB').replace(/\//g, '-'); // DD-MM-YYYY
+                } else if (unit === 'month') {
+                    key = `${date.getMonth() + 1}-${date.getFullYear()}`; // MM-YYYY
+                } else if (unit === 'year') {
+                    key = date.getFullYear().toString(); // YYYY
+                }
+    
+                // Aggregate donation amounts
+                if (!groupedData[key]) {
+                    groupedData[key] = 0;
+                }
+                groupedData[key] += row.amount;
+            });
+    
+            return groupedData;
         }
+    
+        // Initial grouping by day
+        let currentGrouping = 'day';
+        let groupedData = groupData(data, currentGrouping);
+    
+        // Function to update the chart with new grouping
+        function updateChart() {
+            currentGrouping = document.getElementById('grouping').value;
+            groupedData = groupData(data, currentGrouping);
+    
+            // Update chart data
+            chart.data.labels = Object.keys(groupedData);
+            chart.data.datasets[0].data = Object.values(groupedData);
+            chart.update();
+        }
+    
+        // Create the initial chart
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(groupedData),
+                datasets: [
+                    {
+                        label: 'Donation Records',
+                        backgroundColor: '#22577a',
+                        data: Object.values(groupedData)
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                    }
+                }
+            }
         });
-
+    
         // Download chart image
         document.getElementById('download').addEventListener('click', function() {
-            // Convert the canvas to a Data URL (base64 encoded image)
             const imageURL = canvas.toDataURL('image/png');
-
-            // Create a temporary anchor element to trigger the download
             const a = document.createElement('a');
             a.href = imageURL;
             a.download = 'chart.png';
             a.click();
         });
-
-      </script>
+    </script>
       
     
 
