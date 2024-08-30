@@ -24,7 +24,7 @@
                     <label for="" class="font-semibold">Start Date</label>
                     <input type="date" name="start_date" id="" class="py-2 rounded-lg border" value="{{request()->input('start_date')}}">
                     <label for="" class="font-semibold" >End Date</label>
-                    <input type="date" name="end_date" id="" class="py-2 rounded-lg border" value="{{request()->input('start_date')}}">
+                    <input type="date" name="end_date" id="" class="py-2 rounded-lg border" value="{{request()->input('end_date')}}">
                     <button type="submit" class="inline-block px-4 py-2
                     text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600">Filter</button>
                 </form>
@@ -63,7 +63,7 @@
                 <tbody>
                     @foreach ($doners as $key => $doner)
                         <tr class="hover:bg-gray-100 text-center">
-                            <td class="py-2 px-4 border-b">{{ $key+1 }}</td>
+                            <td class="py-2 px-4 border-b">{{ $doners->firstItem() + $key }}</td>
                             <td class="py-2 px-4 border-b">{{ $doner->created_at->format('d-m-Y') }}</td>
                             <td class="py-2 px-4 border-b">{{ $doner->user->name }}</td>
                             <td class="py-2 px-4 border-b">{{ $doner->user->email }}</td>
@@ -90,8 +90,12 @@
     <div id="imageModal" class="hidden fixed z-50 inset-0 bg-black bg-opacity-50 flex items-center justify-center overflow-auto">
         <div class="bg-white p-4 rounded-lg">
             <img id="modalImage" src="" alt="E-Receipt" class="max-w-full h-svh">
-            <button onclick="closeImageModal()" class="mt-4 bg-[#e85d04] px-4 py-2 rounded-lg text-sm text-white">Close</button>
+            <button onclick="closeImageModal()" class="inline-block px-4 py-2
+            text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600 text-sm">Close</button>
         </div>
+    </div>
+    <div class="mt-4">
+        {{ $doners->links('vendor.pagination.tailwind') }}
     </div>
         
 </x-admin-layout>
