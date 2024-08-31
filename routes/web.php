@@ -14,21 +14,17 @@ use App\Http\Controllers\SigninController;
 use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FinanceController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified', 'normal'])->name('dashboard');
 
-// SuperAdmin Routes
-// Route::middleware(['auth', 'verified', 'superadmin'])->prefix('superadmin')->group(function () {
-//     Route::get('/', [SuperAdminController::class, 'index'])->name('superadmin.index');
-//     Route::get('/create', [SuperAdminController::class, 'create'])->name('superadmin.create');
-//     Route::post('/', [SuperAdminController::class, 'store'])->name('superadmin.store');
-//     Route::get('/{id}/edit', [SuperAdminController::class, 'edit'])->name('superadmin.edit');
-//     Route::put('/{id}', [SuperAdminController::class, 'update'])->name('superadmin.update');
-//     Route::delete('/{id}', [SuperAdminController::class, 'destroy'])->name('superadmin.destroy');
-// });
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::resource('finances', FinanceController::class);
+});
+
 // SuperAdmin Routes
 Route::middleware(['auth', 'verified', 'superadmin'])->prefix('superadmin')->group(function () {
     Route::get('/', [SuperAdminController::class, 'index'])->name('superadmin');

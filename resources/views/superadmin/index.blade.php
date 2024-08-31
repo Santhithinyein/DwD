@@ -18,6 +18,7 @@
         @endif
 
         <a href="{{ route('superadmin.create') }}" class="btn btn-primary mb-3">Add User</a>
+        <a href="{{ route('finances.index') }}" class="btn btn-primary mb-3">Finance </a>
 
         <table class="table table-bordered">
             <thead>
