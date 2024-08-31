@@ -43,6 +43,8 @@ class DatabaseSeeder extends Seeder
         $this->call(MonasterySeeder::class);
         $this->call(TransactionSeeder::class);
         $this->call(FinanceSeeder::class);
+        $this->call(EventSeeder::class);
+
 
 
 

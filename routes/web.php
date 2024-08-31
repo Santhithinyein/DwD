@@ -15,16 +15,30 @@ use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FinanceController;
+use App\Http\Controllers\EventsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified', 'normal'])->name('dashboard');
 
-
 Route::get('/events', function () {
-    return view('events.index');
-})->middleware(['auth', 'verified', 'admin'])->name('events.index');
+    $events = \App\Models\Event::all();
+    return view('events.index', ['events' => $events]);
+})->middleware(['auth', 'verified'])->name('events.index');
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/events/create', [EventsController::class, 'create'])->name('events.create');
+    Route::post('/events', [EventsController::class, 'store'])->name('events.store');
+    Route::get('/events/{event}/edit', [EventsController::class, 'edit'])->name('events.edit');
+    Route::put('/events/{event}', [EventsController::class, 'update'])->name('events.update');
+    Route::delete('/events/{event}', [EventsController::class, 'destroy'])->name('events.destroy');
+});
+
+
+// Route::get('/events', function () {
+//     return view('events.index');
+// })->middleware(['auth', 'verified'])->name('events.index');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('finances', FinanceController::class);
