@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Super Admin - Users</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<x-admin-layout>
     <div class="container mt-5">
-        <h1>Super Admin - User List</h1>
+        <h1>Super Admin - Admin List</h1>
 
         @if (session('success'))
             <div class="alert alert-success">
@@ -35,7 +26,9 @@
                 @php
                     $idNo = 1; // Initialize the ID No counter
                 @endphp
+               
                 @foreach($users as $user)
+                
                     @if($user->userType->id != 2)
                         <tr>
                             <td>{{ $idNo }}</td>
@@ -61,5 +54,7 @@
             </tbody>
         </table>
     </div>
-</body>
-</html>
+
+</x-admin-layout>
+    
+

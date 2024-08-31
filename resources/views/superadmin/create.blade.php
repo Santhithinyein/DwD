@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add User</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<x-superadmin-layout>
     <div class="container mt-5">
-        <h1>Add User</h1>
+        <h1>Add Admin</h1>
 
         <form action="{{ route('superadmin.store') }}" method="POST">
             @csrf
@@ -30,17 +21,20 @@
             </div>
 
             <div class="mb-3">
-    <label for="user_type_id" class="form-label">User Type</label>
+    <label for="user_type_id" class="form-label">Admin Type</label>
     <select name="user_type_id" id="user_type_id" class="form-control" style="background-color:gray; color:pink;">
         @foreach($userTypes as $type)
             <option value="{{ $type->id }}" style="color:pink;">{{ $type->type }}</option>
         @endforeach
     </select>
-</div>
+    </div>
 
 
-            <button type="submit" class="btn btn-primary">Add User</button>
+            <button type="submit" class="btn btn-primary">Add Admin</button>
         </form>
     </div>
-</body>
-</html>
+
+
+
+</x-superadmin-layout>
+    

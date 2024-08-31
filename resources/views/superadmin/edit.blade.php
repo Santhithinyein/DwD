@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edit User</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<x-superadmin-layout>
     <div class="container mt-5">
-        <h1>Edit User</h1>
+        <h1>Edit Admin</h1>
 
         <form action="{{ route('superadmin.update', $user->id) }}" method="POST">
             @csrf
@@ -32,7 +23,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="user_type_id" class="form-label">User Type</label>
+                <label for="user_type_id" class="form-label">Admin Type</label>
                 <select name="user_type_id" id="user_type_id" class="form-control">
                     @foreach($userTypes as $type)
                         <option value="{{ $type->id }}" {{ $user->user_type_id == $type->id ? 'selected' : '' }}>{{ $type->type }}</option>
@@ -40,8 +31,10 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Update User</button>
+            <button type="submit" class="btn btn-primary">Update Admin</button>
         </form>
     </div>
-</body>
-</html>
+
+</x-superadmin-layout>
+    
+

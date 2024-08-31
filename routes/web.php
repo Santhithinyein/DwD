@@ -21,6 +21,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified', 'normal'])->name('dashboard');
 
+
+Route::get('/events', function () {
+    return view('events.index');
+})->middleware(['auth', 'verified', 'admin'])->name('events.index');
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('finances', FinanceController::class);
 });

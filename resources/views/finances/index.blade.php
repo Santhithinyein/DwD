@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finance List</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-</head>
-<body>
+<x-admin-layout>
     <div class="container">
         <h1>Finance List</h1>
         <a href="{{ route('finances.create') }}" class="btn btn-primary mb-3">Add Finance</a>
@@ -43,5 +35,4 @@
             </tbody>
         </table>
     </div>
-</body>
-</html>
+</x-admin-layout>
