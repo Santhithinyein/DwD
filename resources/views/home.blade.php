@@ -1,4 +1,5 @@
 <x-homenav/>
+
 <section class="home" id="home">
     <div class="head_container">
         <div class="box">

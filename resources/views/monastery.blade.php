@@ -1,4 +1,4 @@
-<x-nav/>
+<x-scrollnav/>
 
 <link rel="stylesheet" href="{{asset('/css/monastery.css')}}">
 <div class="mx-20">
@@ -48,8 +48,45 @@
             }, 5000);
         </script>
     @endif
-        @foreach ($monasteries as $monastery)
-        <form action="{{ route('donate') }}" method="get" style="display: inline">
+    @foreach ($monasteries as $monastery)
+    <div class="card flex flex-col lg:flex-row mx-20 rounded-lg md:mx-20 lg:mx-60 bg-white mb-5">
+        <img src="{{ asset($monastery->photo) }}" alt="{{ $monastery->monasteryName }}" width="400" height="300" class="thumbnail p-2">
+
+        <div class="card-details p-2 w-80 bg-grey-200">
+            @if ($monastery->mStatus === 1)
+                <div>
+                    <p class="bg-green-500 text-white pl-20 pt-2 h-10 mb-5">This is celebrated</p>
+                </div>
+            @else
+                <div>
+                    <p class="bg-red-900 text-white pl-20 pt-2 h-10 mb-5">This is uncelebrated</p>
+                </div>
+            @endif
+
+            <div class="text-2xl text-red-800 mb-5 font-semibold text-center">
+                <h1 class="name" id="{{ $monastery->id }}">{{ $monastery->monasteryName }}</h1>
+            </div>
+
+            <h2 class="title text-lg text-red-800 mb-2" id="{{ $monastery->id }}">
+                <i class="fa-solid fa-person-praying text-red-800 m-1"></i>
+                {{ $monastery->monkName }}
+            </h2>
+
+            <div>
+                <p class="text-red-800 mb-5 text-lg" id="{{ $monastery->id }}">
+                    <i class="fa-solid fa-location-dot text-red-800 m-1"></i>
+                    {{ $monastery->address }}
+                </p>
+                <p class="text-red-800 mb-5 font-semibold" id="{{ $monastery->id }}">
+                    Total: <b>{{ $monastery->monkNo }}</b>
+                </p>
+                <input type="hidden" name="status" value="{{  $monastery->mStatus }}">
+            </div>
+        </div>
+    </div>
+@endforeach
+
+        {{-- <form action="{{ route('donate') }}" method="get" style="display: inline">
             <div class="card flex flex-col lg:flex-row mx-20 rounded-lg md:mx-20 lg:mx-60 bg-white mb-5">
                 <img src="{{ asset($monastery->photo) }}" alt="{{ $monastery->monasteryName }}" width="400" height="300" class="thumbnail p-2">
 
@@ -78,13 +115,11 @@
                         <button type="submit" class="w-68 h-10 bg-red-800 text-white text-xl rounded-full text-center px-10 justify-center hover:bg-orange-600">Donate Now</button>
                   
 
-                    {{-- <div class="donateButton w-68 h-10 bg-red-800 text-white text-xl rounded-full text-center p-1 justify-center hover:bg-orange-600" onclick="window.location.href='{{route('donate')}}';">
-                        <button type="button" class="justify-center">Donate Now</button> <!-- Changed to type="button" to avoid form submission -->
-                    </div> --}}
+                    
                 </div>
             </div>
-</form>
-@endforeach
+</form> --}}
+{{-- @endforeach --}}
     </section>
 
     <!-- Pagination Links -->
@@ -94,3 +129,4 @@
 </div>
 
 <x-footer/>
+
