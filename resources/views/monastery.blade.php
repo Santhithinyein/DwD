@@ -50,7 +50,7 @@
     @endif
     @foreach ($monasteries as $monastery)
     <div class="card flex flex-col lg:flex-row mx-20 rounded-lg md:mx-20 lg:mx-60 bg-white mb-5">
-        <img src="{{ asset($monastery->photo) }}" alt="{{ $monastery->monasteryName }}" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/donate7.jpg" alt="{{ $monastery->monasteryName }}" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2 w-80 bg-grey-200">
             @if ($monastery->mStatus === 1)

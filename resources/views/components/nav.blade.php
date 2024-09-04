@@ -13,7 +13,7 @@
 <body class="bg-gray-200">
     <header class="header" id="navigation-menu">
         <div class="container">
-            <nav>
+            <nav class="">
                 <!-- <a href="#" class="logo"><img src="/photo/log3.png" alt=""></a> -->
 
                 <ul class="nav-menu">

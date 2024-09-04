@@ -16,6 +16,7 @@ use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\EventsController;
+use App\Http\Controllers\LocaleController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard', function () {
@@ -116,3 +117,11 @@ Route::post('/photoupload', [UploadController::class, 'details'])->name('details
 
 // QR Payment Routes
 Route::get('/qrpayment', [QRpaymentController::class, 'index'])->name('qrpay');
+
+Route::get('/monastery',[MonasteryUserController::class,'show'])->name('userMonastery');
+Route::get('/celebrated', [MonasteryUserController::class, 'celebrated'])->name('celebrated');
+Route::get('/uncelebrated', [MonasteryUserController::class, 'uncelebrated'])->name('uncelebrated');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::post('/search',[MonasteryUserController::class,'search'])->name('search');
+
+
