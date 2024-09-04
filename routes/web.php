@@ -124,4 +124,7 @@ Route::get('/uncelebrated', [MonasteryUserController::class, 'uncelebrated'])->n
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::post('/search',[MonasteryUserController::class,'search'])->name('search');
 
+//User
+// Route::get('/monastery_user', [MonasteryUserController::class, 'show'])->name('userMonastery');
+// Route::get('/user_about', [AboutController::class, 'index'])->name('about');
 

@@ -20,10 +20,8 @@
                             class="lg:h-72 md:h-48 w-full object-cover object-center">
                         <div class="p-6">
                             <!-- hover:bg-indigo-700 hover:text-white transition duration-300 ease-in -->
-                            <p class="leading-relaxed mb-3 ">Lorem ipsum dolor, sit amet consectetur adipisicing
-                                elit. Dolorum ipsa quisquam eius deserunt sequi minus, odit numquam inventore dolore
-                                sint soluta, error eum, quibusdam qui corrupti itaque repudiandae consectetur
-                                nostrum.</p>
+                            <p class="leading-relaxed mb-3 ">It is a web app that will be able to contribute to the merits of any kind of charity. With special reference to the Kathin period, which is a tradition of Burmese people, aim to have Kathin in the monasteries in Pyay. Donors are encouraged to participate and donate that there is no donation.
+                                Donations are designated as common funds and are intended to be donated through the Ministry of Religious Affairs to unearned monks. For those who want to make their own Kahtein donation, Donating with Devotion can also contact monasteries that do not have Kahtein and ask for donations.</p>
                         </div>
                     </div>
 
@@ -42,14 +40,14 @@
                     </h5>
                 </div>
                 <div class="flex flex-row gap-2 items-center justify-center mb-5">
-                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="50000" > 50 MMK</div>
-                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="40000" > 40 MMK</div>
-                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="35000" > 35 MMK</div>
+                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="50000" > 50000K </div>
+                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="40000" > 40000K </div>
+                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="35000" > 35000K </div>
                 </div>
                 <div class="flex flex-row gap-2 items-center justify-center mb-5">
-                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="30000" > 30 MMK</div>
-                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="25000" > 25 MMK</div>
-                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="20000" > 20 MMK</div>
+                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="30000" > 30000K </div>
+                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="25000" > 25000K </div>
+                    <div class="border pay_btn border-gray-500 px-3 py-2 text-sm uppercase tracking-widest hover:bg-black hover:text-white rounded-md truncate btn" data-value="20000" > 20000K </div>
                 </div>
                 <div class="border border-gray-500 px-3 py-2 tracking-widest rounded-md w-10/12 ml-5">
                     <input type="text" id="donate_rate" name="donate_rate" class="text-sm uppercase bg-transparent border-none outline-none" placeholder="MMK">

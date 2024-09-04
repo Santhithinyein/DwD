@@ -11,7 +11,7 @@
         </form>
 
         <form action="{{ route('uncelebrated') }}" method="GET">
-            <button type="submit" class="text-red-800 w-26 h-10 border border-red-800 rounded-lg hover:bg-red-800 hover:text-white">Uncelebrated</button>
+            <button type="submit" class="text-red-800 w-26 h-10 border border-red-800 rounded-lg bg-white hover:bg-red-800 hover:text-white">Uncelebrated</button>
         </form>
     </div>
 
@@ -24,7 +24,7 @@
             <button type="submit" class="bg-red-800 w-16 h-10 rounded-lg hover:bg-orange-600 text-white">Search</button>
         </form>
 
-        <form action="{{ route('userMonastery') }}" method="GET" style="display: inline">
+        <form method="GET" style="display: inline">
             <button type="submit" class="bg-red-800 w-16 h-10 rounded-lg hover:bg-orange-600 text-white">Refresh</button>
         </form>
     </div>
@@ -37,7 +37,7 @@
                 <p>{{ session('success') }}</p>
             </div>
         </div>
-    
+
         <script>
             // Automatically hide the message box after 5 seconds
             setTimeout(() => {
@@ -88,7 +88,7 @@
 
         {{-- <form action="{{ route('donate') }}" method="get" style="display: inline">
             <div class="card flex flex-col lg:flex-row mx-20 rounded-lg md:mx-20 lg:mx-60 bg-white mb-5">
-                <img src="{{ asset($monastery->photo) }}" alt="{{ $monastery->monasteryName }}" width="400" height="300" class="thumbnail p-2">
+                <img src="/Images/vb.jpg" alt="{{ $monastery->monasteryName }}" width="400" height="300" class="thumbnail p-2">
 
                 <div class="card-details p-2 w-80 bg-grey-200">
                     <div class="text-2xl text-red-800 mb-5 font-semibold text-center">
@@ -111,11 +111,11 @@
                         <input type="hidden" name="status" value="{{  $monastery->mStatus }}">
                     </div>
 
-                   
-                        <button type="submit" class="w-68 h-10 bg-red-800 text-white text-xl rounded-full text-center px-10 justify-center hover:bg-orange-600">Donate Now</button>
-                  
 
-                    
+                        <button type="submit" class="w-68 h-10 bg-red-800 text-white text-xl rounded-full text-center px-10 justify-center hover:bg-orange-600">Donate Now</button>
+
+
+
                 </div>
             </div>
 </form> --}}

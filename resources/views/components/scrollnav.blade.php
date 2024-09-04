@@ -39,7 +39,7 @@
             <h1 class="text-2xl font-bold">Monastery</h1>
             <nav>
                 <a href="{{route('donate')}}" class="mx-2 hover:text-orange-600">Donate</a>
-                
+
                 <!-- Add other navigation links as needed -->
             </nav>
         </div>
@@ -76,5 +76,5 @@
             scrollNavbar.classList.add('hidden');
         }
     });
-    
+
 </script>

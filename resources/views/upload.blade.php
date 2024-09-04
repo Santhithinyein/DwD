@@ -42,24 +42,22 @@
                 <h1 class="text-4xl md:text-4xl text-gray-700 font-semibold">ကိုးသိန်းစာသင်တိုက်</h1>
             </div> -->
 
-            <div class="flex flex-warp m-4">
-                <div class="p-4">
-                    <div class="h-full border-4 border-white border-opacity-60 rounded-lg overflow-hidden">
+            <div class="flex flex-warp -m-4">
+                <div class="p-5">
+                    <div class="h-full border-2 border-white rounded-lg overflow-hidden">
                         <img src="/Images/vb.jpg" alt="image"
                             class="lg:h-72 md:h-48 w-full object-cover object-center">
                         <div class="p-6">
                             <!-- hover:bg-indigo-700 hover:text-white transition duration-300 ease-in -->
-                            <p class="leading-relaxed mb-3 ">Lorem ipsum dolor, sit amet consectetur adipisicing
-                                elit. Dolorum ipsa quisquam eius deserunt sequi minus, odit numquam inventore dolore
-                                sint soluta, error eum, quibusdam qui corrupti itaque repudiandae consectetur
-                                nostrum.</p>
+                            <p class="leading-relaxed mb-3 ">It is a web app that will be able to contribute to the merits of any kind of charity. With special reference to the Kathin period, which is a tradition of Burmese people, aim to have Kathin in the monasteries in Pyay. Donors are encouraged to participate and donate that there is no donation.
+                                Donations are designated as common funds and are intended to be donated through the Ministry of Religious Affairs to unearned monks. For those who want to make their own Kahtein donation, Donating with Devotion can also contact monasteries that do not have Kahtein and ask for donations.</p>
                         </div>
                     </div>
 
                 </div>
             </div>
         </div>
-        <div class="basis-1/4 border-4 border-white bg-white rounded-md">
+        <div class="basis-1/4 border-2 border-white bg-white rounded-md">
 
             <!------------ payment ------------>
 
@@ -77,7 +75,7 @@
                                 <a href="{{route('payment')}}" class="text-gray-900">&#11164;</a>&nbsp;&nbsp;Upload image
                             </h5>
                         </div>
-                       
+
 
                         <img src="/images/pf1.png" alt="" srcset="" id="profile-pic">
                         <label for="input-file">

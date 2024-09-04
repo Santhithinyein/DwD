@@ -8,14 +8,12 @@
         <div class="basis-2/5 border-4 border-white bg-white rounded-md">
             <div class="flex flex-wrap -m-4">
                 <div class="p-4">
-                    <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                    <div class="h-full border-2 border-white border-opacity-60 rounded-lg overflow-hidden">
                         <img src="/images/donate7.jpg" alt="image"
                             class="lg:h-72 md:h-48 w-full object-cover object-center">
                         <div class="p-6">
-                            <p class="leading-relaxed mb-3">Lorem ipsum dolor sit amet consectetur adipisicing
-                                elit. Dolorum ipsa quisquam eius deserunt sequi minus, odit numquam inventore dolore
-                                sint soluta, error eum, quibusdam qui corrupti itaque repudiandae consectetur
-                                nostrum.</p>
+                            <p class="leading-relaxed mb-3">It is a web app that will be able to contribute to the merits of any kind of charity. With special reference to the Kathin period, which is a tradition of Burmese people, aim to have Kathin in the monasteries in Pyay. Donors are encouraged to participate and donate that there is no donation.
+                                Donations are designated as common funds and are intended to be donated through the Ministry of Religious Affairs to unearned monks. For those who want to make their own Kahtein donation, Donating with Devotion can also contact monasteries that do not have Kahtein and ask for donations.</p>
                         </div>
                     </div>
                 </div>
@@ -43,18 +41,18 @@
                         <img src="/images/kpay.png" alt="" class="w-32" >
                 </div>
 
-                
+
                 <div>
                     <input type="text"
                     class="text-sm uppercase bg-transparent border border-gray-500 px-3 py-2 tracking-widest rounded-md w-32 text-center mt-16 ml-16"
                     placeholder="{{ $price }}" readonly>
-                </div>  
-                
-                <div class="flex justify-center mt-10 pb-7">
-                    <button type="submit" class="text-white rounded-md w-36 h-9"  style="background-color: #ffe512;">Upload photo</button>
                 </div>
 
-           
+                <div class="flex justify-center mt-10 pb-7">
+                    <button type="submit" class="text-white rounded-md w-36 h-9 hover:bg-yellow-200"  style="background-color: #ffe512;">Upload photo</button>
+                </div>
+
+
             </form>
         </div>
     </div>

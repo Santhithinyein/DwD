@@ -79,7 +79,8 @@ header ul li a{
 }
 
 header ul li a:hover{
-    color: #C1B086;
+    color: orange;
+    font-weight: 1000;
 }
 
 @media only screen and (max-width: 768px){
