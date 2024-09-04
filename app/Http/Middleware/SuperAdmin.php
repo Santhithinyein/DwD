@@ -16,8 +16,6 @@ class SuperAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // return $next($request);
-
         if(!Auth::check()){
             return redirect()->route('login');
         }
@@ -32,8 +30,16 @@ class SuperAdmin
         }
 
         
-        if($userRole==4){
+        if($userRole==2){
             return redirect()->route('dashboard');
+        }
+
+        if($userRole==5){
+            return redirect()->route('admin');
+        }
+
+        if($userRole==6){
+            return redirect()->route('admin');
         }
     }
 }

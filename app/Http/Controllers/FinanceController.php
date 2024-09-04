@@ -10,7 +10,8 @@ class FinanceController extends Controller
     public function index()
     {
         $finances = Finance::all();
-        return view('finances.index', compact('finances'));
+        $totalAmount = $finances->sum('amount');
+        return view('finances.index', compact('finances','totalAmount'));
     }
 
     public function create()

@@ -1,28 +1,30 @@
 <x-admin-layout>
     <div class="container mx-auto py-6">
-        <div class="w-full max-w-lg mx-auto">
-            <h2 class="text-2xl font-semibold mb-6">Add New Event</h2>
+        <div class="w-full max-w-lg mx-auto bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-2xl font-semibold mb-6 text-gray-900">Add New Event</h2>
 
             <form action="{{ route('events.store') }}" method="POST">
                 @csrf
+
                 <div class="mb-4">
-                    <label for="name" class="block text-gray-700">Name</label>
-                    <input type="text" name="name" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none" required>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" name="name" id="name" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                 </div>
 
                 <div class="mb-4">
-                    <label for="month" class="block text-gray-700">Month</label>
-                    <input type="text" name="month" id="month" class="w-full px-4 py-2 border rounded-lg focus:outline-none" required>
+                    <label for="month" class="block text-sm font-medium text-gray-700">Month</label>
+                    <input type="text" name="month" id="month" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                 </div>
 
                 <div class="mb-4">
-                    <label for="description" class="block text-gray-700">Description</label>
-                    <textarea name="description" id="description" class="w-full px-4 py-2 border rounded-lg focus:outline-none" required></textarea>
+                    <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+                    <textarea name="description" id="description" rows="4" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required></textarea>
                 </div>
 
                 <div class="flex justify-end">
-                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
-                        Save
+                    <button type="submit" class="w-full inline-block px-4 py-2
+                    text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600">
+                        Add Event
                     </button>
                 </div>
             </form>

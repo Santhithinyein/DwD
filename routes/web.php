@@ -17,6 +17,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\LocaleController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard', function () {
@@ -27,6 +28,12 @@ Route::get('/events', function () {
     $events = \App\Models\Event::all();
     return view('events.index', ['events' => $events]);
 })->middleware(['auth', 'verified'])->name('events.index');
+
+Route::get('/roles', function () {
+    $users = User::all();
+    return view('role', ['users' => $users]);
+})->middleware(['auth', 'verified'])->name('role');
+
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/events/create', [EventsController::class, 'create'])->name('events.create');
@@ -56,7 +63,9 @@ Route::middleware(['auth', 'verified', 'superadmin'])->prefix('superadmin')->gro
 });
 
 // Admin Routes
-Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth', 'verified', 'admin'])->name('admin');
+Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth', 'verified'])->name('admin');
+// Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth', 'verified', 'admin'])->name('admin');
+
 
 // Profile Routes
 Route::middleware('auth')->group(function () {
@@ -66,6 +75,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // Monastery Routes
+
 Route::get('/', [MonasteryController::class, 'index'])->name('monasteries.index');
 Route::get('/monasteries/create', [MonasteryController::class, 'create'])->name('monasteries.create');
 Route::post('/monasteries', [MonasteryController::class, 'store'])->name('monasteries.store');
@@ -73,20 +83,29 @@ Route::get('/monasteries/{monastery}/edit', [MonasteryController::class, 'edit']
 Route::put('/monasteries/{monastery}', [MonasteryController::class, 'update'])->name('monasteries.update');
 Route::delete('/monasteries/{monastery}', [MonasteryController::class, 'destroy'])->name('monasteries.destroy');
 
-// User Management Routes
-Route::get('/users', [UserController::class, 'index'])->name('users.index');
-Route::get('/users/export/', [UserController::class, 'export'])->name('users.export');
+// // User Management Routes
+// Route::get('/users', [UserController::class, 'index'])->name('users.index');
+// Route::get('/users/export/', [UserController::class, 'export'])->name('users.export');
 
-// Mail Routes
-Route::post('/mail/{id}', [UserController::class, 'sendMail'])->name('mail');
+// // Mail Routes
+// Route::post('/mail/{id}', [UserController::class, 'sendMail'])->name('mail');
 
-// Event Routes
-Route::post('/event', [/* Controller or Closure */])->name('event');
+// // Event Routes
+// Route::post('/event', [/* Controller or Closure */])->name('event');
 
-// Doner Routes
-Route::get('/doners', [DonerController::class, 'index'])->name('doners');
-Route::post('/doners/search', [DonerController::class, 'index'])->name('doners.search');
-Route::post('/doners/filter', [DonerController::class, 'filter'])->name('doners.filter');
+// // Doner Routes
+// Route::get('/doners', [DonerController::class, 'index'])->name('doners');
+// Route::post('/doners/search', [DonerController::class, 'index'])->name('doners.search');
+// Route::post('/doners/filter', [DonerController::class, 'filter'])->name('doners.filter');
+// Route::get('/doners/export/', [DonerController::class, 'export'])->name('doners.export');
+
+Route::get('/users',[UserController::class,'index'])->name('users');
+Route::get('users/export/', [UserController::class, 'export'])->name('users.export');
+Route::post('/mail/{id}',[UserController::class,'sendMail'])->name('mail');
+Route::post('/event',[])->name('event');
+Route::get('/doners',[DonerController::class,'index'])->name('doners');
+Route::post('/doners/search',[DonerController::class,'index'])->name('doners.search');
+Route::post('/doners/filter',[DonerController::class,'filter'])->name('doners.filter');
 Route::get('/doners/export/', [DonerController::class, 'export'])->name('doners.export');
 
 require __DIR__.'/auth.php';
@@ -127,4 +146,3 @@ Route::post('/search',[MonasteryUserController::class,'search'])->name('search')
 //User
 // Route::get('/monastery_user', [MonasteryUserController::class, 'show'])->name('userMonastery');
 // Route::get('/user_about', [AboutController::class, 'index'])->name('about');
-

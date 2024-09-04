@@ -30,6 +30,8 @@ class SigninController extends Controller
     }
 }
 
+
+
     
 
     // public function authenticate(Request $request){

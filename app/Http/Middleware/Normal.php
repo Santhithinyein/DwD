@@ -16,14 +16,12 @@ class Normal
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // return $next($request); 
-
         if(!Auth::check()){
             return redirect()->route('login');
         }
         $userRole=Auth::user()->user_type_id;
 
-        if($userRole==4){
+        if($userRole==2){
             return $next($request);
         }
         
@@ -34,6 +32,14 @@ class Normal
         
         if($userRole==1){
             return redirect()->route('superadmin');
+        }
+
+        if($userRole==5){
+            return redirect()->route('admin');
+        }
+
+        if($userRole==6){
+            return redirect()->route('admin');
         }
     }
 }

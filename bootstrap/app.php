@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Middleware\Admin;
+use App\Http\Middleware\Management;
 use App\Http\Middleware\Normal;
+use App\Http\Middleware\Religious;
 use App\Http\Middleware\SuperAdmin;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -22,7 +24,9 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'superadmin'=>SuperAdmin::class,
             'admin'=>Admin::class,
-            'normal'=>Normal::class
+            'normal'=>Normal::class,
+            'religious'=>Religious::class,
+            'management'=>Management::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

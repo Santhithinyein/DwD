@@ -36,7 +36,7 @@
                     </div>
                     <div class="bg-gradient-to-r from-pink-500 to-orange-500 p-6 rounded-lg shadow-lg">
                         <div class="text-sm font-medium text-white">Total Donation Amount</div>
-                        <div class="mt-2 text-3xl font-bold text-white">{{$total}} Ks</div>
+                        <div class="mt-2 text-3xl font-bold text-white">{{number_format($total)}} Ks</div>
                     </div>
                     <!-- Add more premium cards as needed -->
                 </div>
@@ -54,7 +54,9 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                
                                 @foreach ($recentDoners as $recentDoner)
+                               
                                     <tr>
                                         {{-- <td class="border px-4 py-2">{{$recentDoner->id}}</td> --}}
                                         <td class="border px-4 py-2">{{$recentDoner->user->name}}</td>
@@ -79,17 +81,18 @@
           </div>
       
           <div class="chart-container ml-5" style="position: relative; height:40vh; width:80vw">
-              <div class="flex space-x-2">
-                <button id="download" class="inline-block px-4 py-2
-              text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600">Download Chart</button>
-               <!-- Dropdown for grouping options -->
-                <select id="grouping" onchange="updateChart()" class="bg-white border border-orange-300 text-gray-700 text-sm rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 block w-20 p-2.5 shadow-sm transition duration-200 ease-in-out hover:border-orange-400 hover:shadow-md">
-                    <option value="day">Day</option>
-                    <option value="month">Month</option>
-                    <option value="year">Year</option>
-                </select>
-              </div>
-
+              @can('admin')
+                <div class="flex space-x-2">
+                    <button id="download" class="inline-block px-4 py-2
+                text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600">Download Chart</button>
+                <!-- Dropdown for grouping options -->
+                    <select id="grouping" onchange="updateChart()" class="bg-white border border-orange-300 text-gray-700 text-sm rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 block w-20 p-2.5 shadow-sm transition duration-200 ease-in-out hover:border-orange-400 hover:shadow-md">
+                        <option value="day">Day</option>
+                        <option value="month">Month</option>
+                        <option value="year">Year</option>
+                    </select>
+                </div>                  
+              @endcan
                     
               <canvas id="myChart"></canvas>
               
