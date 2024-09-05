@@ -36,7 +36,7 @@ class SuperAdminController extends Controller
             'user_type_id' => $request->user_type_id,
         ]);
 
-        return redirect()->route('superadmin')->with('success', 'User created successfully.');
+        return redirect()->route('superadmin')->with('success', 'Admin created successfully.');
     }
 
     public function edit($id)
@@ -79,7 +79,7 @@ class SuperAdminController extends Controller
 
     $user->save();
 
-    return redirect()->route('superadmin')->with('success', 'User updated successfully');
+    return redirect()->route('superadmin')->with('success', 'Admin updated successfully');
 }
 
 
@@ -88,7 +88,7 @@ class SuperAdminController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
 
-        return redirect()->route('superadmin')->with('success', 'User deleted successfully.');
+        return redirect()->route('superadmin')->with('success', 'Admin deleted successfully.');
     }
     
 
