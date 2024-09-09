@@ -49,8 +49,11 @@
                             class="lg:h-72 md:h-48 w-full object-cover object-center">
                         <div class="p-6">
                             <!-- hover:bg-indigo-700 hover:text-white transition duration-300 ease-in -->
-                            <p class="leading-relaxed mb-3 ">It is a web app that will be able to contribute to the merits of any kind of charity. With special reference to the Kathin period, which is a tradition of Burmese people, aim to have Kathin in the monasteries in Pyay. Donors are encouraged to participate and donate that there is no donation.
-                                Donations are designated as common funds and are intended to be donated through the Ministry of Religious Affairs to unearned monks. For those who want to make their own Kahtein donation, Donating with Devotion can also contact monasteries that do not have Kahtein and ask for donations.</p>
+                            <p class="leading-relaxed mb-3" style="text-align: justify;">
+                                <span class="en">Able to contribute any kind of a lot or a bit of the charity. With special reference to the Kathin period, aim to have Kathin in the monasteries within Pyay. Donations are designated as common funds and are intended to be donated through the Ministry of Religious Affairs to unearned monasteries. Donars who want to make their own Kahtein donation, can also contact monasteries that do not have Kahtein and ask for donations.</span>
+                    <span class="mm">ကထိန်ကာလကို အထူးရည်ညွှန်း၍ ပြည်မြို့အတွင်းရှိ ဘုန်းကြီးကျောင်းများတွင် ကထိန်ပွဲပြုလုပ်ရန် ရည်ရွယ်ပါသည်။ အလှူငွေများကို ဘုံရန်ပုံငွေအဖြစ် သတ်မှတ်ကာ သာသနာရေး ဝန်ကြီးဌာနမှ တဆင့် မရရှိသော ဘုန်းကြီးကျောင်းများသို့ လှူဒါန်းရန် ရည်ရွယ်ပါသည်။ မိမိတို့ကိုယ်တိုင် ကထိန်လှူဒါန်းလိုသော အလှူရှင်များအနေဖြင့် ကထိန်မရှိသော ဘုန်းတော်ကြီးကျောင်းများသို့လည်း ဆက်သွယ်၍ လှူဒါန်းနိုင်ပါသည်။
+                    </span>
+                                </p>
                         </div>
                     </div>
 
@@ -72,20 +75,26 @@
 
                         <div>
                             <h5 class="text-base md:text-lg text-gray-500 mb-1 pt-5 text-center">
-                                <a href="{{route('payment')}}" class="text-gray-900">&#11164;</a>&nbsp;&nbsp;Upload image
+                                <a href="{{route('payment')}}" class="text-gray-900">&#11164;</a>&nbsp;&nbsp;
+                                <span class="en">Upload image</span>
+                                <span class="mm"> ပုံထည့်ရန်</span>
                             </h5>
                         </div>
 
 
                         <img src="/images/pf1.png" alt="" srcset="" id="profile-pic">
                         <label for="input-file">
-                            Upload Image
-                            <ion-icon name="camera" class="i text-red-800 text-2xl px-2"></ion-icon>
+                            <span class="en">Upload Image</span>
+                            <span class="mm">ပုံတင်ပါ</span>
+                                <ion-icon name="camera" class="i text-red-800 text-2xl px-2"></ion-icon>
                         </label>
                         <input type="file" name="image" accept="image/jpeg, image/png, image/jpg" id="input-file" style="display:none;">
 
                         <div class="mt-12 pb-7">
-                            <button type="submit" class="text-white bg-red-800 rounded-md w-48 h-12 hover:bg-orange-600">Save Changes</button>
+                            <button type="submit" class="text-white bg-red-800 rounded-md w-48 h-12 hover:bg-orange-600">
+                                <span class="en">Save Changes</span>
+                            <span class="mm">
+                                သိမ်းဆည်းရန်</span></button>
                         </div>
                     </div>
                 </div>

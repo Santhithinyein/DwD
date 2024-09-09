@@ -1,6 +1,6 @@
-#donate,#signin,#payment,#upload{
+/* #donate,#signin,#payment,#upload{
     display:none;
-}
+} */
 
 input:focus~label,
 input:valid~label {
@@ -69,3 +69,6 @@ label:hover{
  .i:hover{
     color: #fd5823;
  }
+
+
+

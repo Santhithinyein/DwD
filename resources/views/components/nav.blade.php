@@ -12,7 +12,7 @@
 </head>
 
 <body class="bg-gray-200">
-    <header class="header" id="navigation-menu">
+    <header class="header sticky top-0" id="navigation-menu">
         <div class="container">
             <nav>
                 <!-- <a href="#" class="logo"><img src="/photo/log3.png" alt=""></a> -->
