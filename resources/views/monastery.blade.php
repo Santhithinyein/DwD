@@ -2,16 +2,25 @@
 
 <link rel="stylesheet" href="{{asset('/css/monastery.css')}}">
 <div class="mx-20">
-    <h1 class="text-3xl font-bold p-2 text-red-800 mb-10">Monastery</h1>
+    <h1 class="text-3xl font-bold p-2 text-red-800 mb-10">
+        <span class="en">Monastery</span>
+        <span class="mm">ကျောင်းတိုက်</span>
+    </h1>
 
     <!-- Filter Buttons -->
     <div class="flex flex-row space-x-3">
         <form action="{{ route('celebrated') }}" method="GET">
-            <button type="submit" class="text-white w-20 h-10 bg-red-800 rounded-lg hover:bg-white hover:text-red-800">Celebrated</button>
+            <button type="submit" class="text-white w-32 h-10 bg-red-800 rounded-lg hover:bg-white hover:text-red-800">
+                <span class="en">Celebrated</span>
+                <span class="mm">ကထိန်ရရှိပြီး</span>
+            </button>
         </form>
 
         <form action="{{ route('uncelebrated') }}" method="GET">
-            <button type="submit" class="text-red-800 w-26 h-10 border border-red-800 rounded-lg bg-white hover:bg-red-800 hover:text-white">Uncelebrated</button>
+            <button type="submit" class="text-red-800 w-32 h-10 border border-red-800 rounded-lg bg-white hover:bg-red-800 hover:text-white">
+                <span class="en">Uncelebrated</span>
+                <span class="mm">ကထိန်ရရှိရန်</span>
+            </button>
         </form>
     </div>
 
@@ -19,12 +28,18 @@
     <div class="relative mb-5 text-right">
         <form action="{{ route('search') }}" method="POST" style="display: inline">
             @csrf
-            <label for="search" class="text-xl text-red-800 p-2">Monastery:</label>
+            <label for="search" class="text-xl text-red-800 p-2">
+                <span class="en">Monastery:</span>
+                <span class="mm">ကျောင်းတိုက်</span>
+            </label>
             <input type="text" name="search" class="w-64 h-10 border-1 border-red-800 rounded-lg shadow-lg text-red-800" placeholder="  Search Monastery...">
-            <button type="submit" class="bg-red-800 w-16 h-10 rounded-lg hover:bg-orange-600 text-white">Search</button>
+            <button type="submit" class="bg-red-800 w-16 h-10 rounded-lg hover:bg-orange-600 text-white">
+                <span class="en">Search</span>
+                <span class="mm">ရှာရန်</span>
+            </button>
         </form>
 
-        <form method="GET" style="display: inline" action="{{ route('userMonastery') }}">
+        <form method="GET" style="display: inline">
             <button type="submit" class="bg-red-800 w-16 h-10 rounded-lg hover:bg-orange-600 text-white">Refresh</button>
         </form>
     </div>
@@ -50,16 +65,22 @@
     @endif
     @foreach ($monasteries as $monastery)
     <div class="card flex flex-col lg:flex-row mx-20 rounded-lg md:mx-20 lg:mx-60 bg-white mb-5">
-        <img src="/images/razor.webp" alt="{{ $monastery->monasteryName }}" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/donate7.jpg" alt="{{ $monastery->monasteryName }}" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2 w-80 bg-grey-200">
             @if ($monastery->mStatus === 1)
                 <div>
-                    <p class="bg-green-500 text-white pl-20 pt-2 h-10 mb-5">This is celebrated</p>
+                    <p class="bg-green-500 text-white pl-20 pt-2 h-10 mb-5">
+                        <span class="en">This is celebrated</span>
+                        <span class="mm">ကထိန်ကျင်းပပြီး</span>
+                    </p>
                 </div>
             @else
                 <div>
-                    <p class="bg-red-900 text-white pl-20 pt-2 h-10 mb-5">This is uncelebrated</p>
+                    <p class="bg-red-900 text-white pl-20 pt-2 h-10 mb-5">
+                        <span class="en"> This is uncelebrated</span>
+                        <span class="mm">ကထိန်မရရှိသေးပါ</span>
+                    </p>
                 </div>
             @endif
 
@@ -129,4 +150,3 @@
 </div>
 
 <x-footer/>
-
