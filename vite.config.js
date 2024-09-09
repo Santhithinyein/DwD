@@ -7,6 +7,8 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
+                'resources/js/custom_js/engMya.js',
+                'resources/js/engMya.js'
             ],
             refresh: true,
         }),

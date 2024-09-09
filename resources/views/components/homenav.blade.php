@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/home.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/custom_js/engMya.js', 'resources/css/lang.css'])
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/all.min.css"/>
     <title>Donating with Devotion</title>
 </head>
@@ -15,12 +16,29 @@
         <div class="container">
             <nav>
                 <!-- <a href="#" class="logo"><img src="/photo/log3.png" alt=""></a> -->
-
+                <x-lang class=""/>
                 <ul class="nav-menu flex space-x-4">
-                    <li><a href="{{route('home')}}" class="nav-link">Home</a></li>
-                    <li><a href="{{route('userMonastery')}}" class="nav-link">Monastery</a></li>
-                    <li><a href="{{route('donate')}}" class="nav-link">Donation</a></li>
-                    <li><a href="{{ route('about') }}" class="nav-link">About</a></li>
+                    <li>
+                        <a href="{{route('home')}}" class="nav-link">
+                            <span class="en">Home</span>
+                            <span class="mm">ပင်မစာမျက်နှာ</span>
+                        </a>
+                    </li>
+                    <li><a href="{{route('userMonastery')}}" class="nav-link">
+                        <span class="en">Monastery</span>
+                        <span class="mm">ကျောင်းတိုက်</span>
+                        </a>
+                    </li>
+                    <li><a href="{{route('donate')}}" class="nav-link">
+                        <span class="en">Donation</span>
+                        <span class="mm">လှူဒါန်းရန်</span>
+                        </a>
+                    </li>
+                    <li><a href="{{ route('about') }}" class="nav-link">
+                        <span class="en">About</span>
+                        <span class="mm">အကြောင်းအရာ</span>
+                    </a>
+                    </li>
                     {{-- <li class="relative">
                         <button class="nav-link text-white" id="languageDropdownButton">
                             Language <i class="fas fa-chevron-down ml-1"></i>
@@ -74,4 +92,4 @@
         }
     });
     </script>
-    
+

@@ -40,7 +40,7 @@
                     </div>
                     <!-- Add more premium cards as needed -->
                 </div>
-            
+
                 <div class="mt-8">
                     <div class="p-6 rounded-lg shadow-lg bg-white">
                         <div class="text-lg font-semibold">Recent Donor</div>
@@ -54,15 +54,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
+
                                 @foreach ($recentDoners as $recentDoner)
-                               
+
                                     <tr>
                                         {{-- <td class="border px-4 py-2">{{$recentDoner->id}}</td> --}}
                                         <td class="border px-4 py-2">{{$recentDoner->user->name}}</td>
                                         <td class="border px-4 py-2">{{$recentDoner->amount}} Ks</td>
                                         <td class="border px-4 py-2 text-green-600">{{$recentDoner->created_at->format('d-m-Y')}}</td>
-                                    </tr>                                    
+                                    </tr>
                                 @endforeach
                                 <!-- Add more rows as needed -->
                             </tbody>
@@ -73,13 +73,13 @@
                                 See More
                             </a>
                         </div>
-                        
-                        
+
+
                     </div>
                 </div>
             </div>
           </div>
-      
+
           <div class="chart-container ml-5" style="position: relative; height:40vh; width:80vw">
               @can('admin')
                 <div class="flex space-x-2">
@@ -91,34 +91,34 @@
                         <option value="month">Month</option>
                         <option value="year">Year</option>
                     </select>
-                </div>                  
+                </div>
               @endcan
-                    
+
               <canvas id="myChart"></canvas>
-              
+
           </div>
     </div>
-    
+
     {{-- <div>
         <canvas id="myChart"></canvas>
     </div> --}}
-      
+
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      
+
       <script>
         const canvas = document.getElementById('myChart');
         const ctx = canvas.getContext('2d');
-    
+
         // Fetch data from backend
         let data = @json($doners);
-    
+
         // Function to group data by the selected time unit
         function groupData(data, unit) {
             const groupedData = {};
-    
+
             data.forEach(row => {
                 const date = new Date(row.created_at);
-    
+
                 // Format the date based on the selected unit
                 let key;
                 if (unit === 'day') {
@@ -128,32 +128,32 @@
                 } else if (unit === 'year') {
                     key = date.getFullYear().toString(); // YYYY
                 }
-    
+
                 // Aggregate donation amounts
                 if (!groupedData[key]) {
                     groupedData[key] = 0;
                 }
                 groupedData[key] += row.amount;
             });
-    
+
             return groupedData;
         }
-    
+
         // Initial grouping by day
         let currentGrouping = 'day';
         let groupedData = groupData(data, currentGrouping);
-    
+
         // Function to update the chart with new grouping
         function updateChart() {
             currentGrouping = document.getElementById('grouping').value;
             groupedData = groupData(data, currentGrouping);
-    
+
             // Update chart data
             chart.data.labels = Object.keys(groupedData);
             chart.data.datasets[0].data = Object.values(groupedData);
             chart.update();
         }
-    
+
         // Create the initial chart
         const chart = new Chart(ctx, {
             type: 'bar',
@@ -177,7 +177,7 @@
                 }
             }
         });
-    
+
         // Download chart image
         document.getElementById('download').addEventListener('click', function() {
             const imageURL = canvas.toDataURL('image/png');
@@ -187,7 +187,7 @@
             a.click();
         });
     </script>
-      
-    
+
+
 
 </x-admin-layout>

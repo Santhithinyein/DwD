@@ -32,8 +32,8 @@ a{
 }
 /* ---- header ---- */
 header{
-    height: 8vh;
-    background: transparent;
+    height: 10vh;
+    background: #991b1b;
 }
 
 .logo img{
@@ -74,7 +74,7 @@ header ul li a{
     font-size: 1.3rem;
     font-weight: 100;
     font-weight: 400;
-    color: #000;
+    color: #fff;
     transition: 0.5s;
 }
 

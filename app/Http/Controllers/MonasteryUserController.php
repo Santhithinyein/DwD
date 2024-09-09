@@ -27,7 +27,11 @@ class MonasteryUserController extends Controller
 
     public function search(Request $request) {
         // Paginate search results
-        $monasteries = Monastery::where('monasteryName', 'LIKE', '%' . $request->search . '%')->paginate(10);
+        $monasteries = Monastery::where('monasteryName', 'LIKE', '%' . $request->search . '%')
+                        ->orWhere('address', 'LIKE', '%' . $request->search . '%')
+                        ->paginate(10);
+
         return view('monastery', compact('monasteries'));
     }
+
 }

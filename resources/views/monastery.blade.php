@@ -24,7 +24,7 @@
             <button type="submit" class="bg-red-800 w-16 h-10 rounded-lg hover:bg-orange-600 text-white">Search</button>
         </form>
 
-        <form method="GET" style="display: inline">
+        <form method="GET" style="display: inline" action="{{ route('userMonastery') }}">
             <button type="submit" class="bg-red-800 w-16 h-10 rounded-lg hover:bg-orange-600 text-white">Refresh</button>
         </form>
     </div>
@@ -50,7 +50,7 @@
     @endif
     @foreach ($monasteries as $monastery)
     <div class="card flex flex-col lg:flex-row mx-20 rounded-lg md:mx-20 lg:mx-60 bg-white mb-5">
-        <img src="/images/donate7.jpg" alt="{{ $monastery->monasteryName }}" width="400" height="300" class="thumbnail p-2">
+        <img src="/images/razor.webp" alt="{{ $monastery->monasteryName }}" width="400" height="300" class="thumbnail p-2">
 
         <div class="card-details p-2 w-80 bg-grey-200">
             @if ($monastery->mStatus === 1)
@@ -78,7 +78,7 @@
                     {{ $monastery->address }}
                 </p>
                 <p class="text-red-800 mb-5 font-semibold" id="{{ $monastery->id }}">
-                    Total: <b>{{ $monastery->monkNo }}</b>
+                    သံဃာတော်အပါးအရေအတွက် : <b>{{ $monastery->monkNo }}</b>
                 </p>
                 <input type="hidden" name="status" value="{{  $monastery->mStatus }}">
             </div>
