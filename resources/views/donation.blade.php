@@ -68,11 +68,11 @@
                             <span class="mm">အီးမေးလ်</span>
                         </label>
 
-                        @error('email')
+                        {{-- @error('email')
                             <span class="invalid-feedback text-red-800" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
-                        @enderror
+                        @enderror --}}
                     </div>
 
 
@@ -131,4 +131,8 @@
     </div>
 </div>
 <x-footer/>
-
+<script>
+    @if ($errors->has('email'))
+        alert('{{ $errors->first('email') }}');
+    @endif
+</script>

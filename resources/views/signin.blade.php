@@ -1,6 +1,25 @@
 <x-nav/>
 <link rel="stylesheet" href="{{asset('/css/donate.css')}}">
 {{-- <script src="{{asset('js/donate.js')}}"></script> --}}
+
+@if (session('success') || session('error'))
+    <div id="message-box" class="fixed top-0 left-1/2 transform -translate-x-1/2 mt-6 z-50">
+        <div class="max-w-sm w-full {{ session('success') ? 'bg-blue-500' : 'bg-red-500' }} text-white text-center py-3 px-4 rounded-lg shadow-lg">
+            <p>{{ session('success') ?? session('error') }}</p>
+        </div>
+    </div>
+
+    <script>
+        // Automatically hide the message box after 5 seconds
+        setTimeout(() => {
+            const messageBox = document.getElementById('message-box');
+            if (messageBox) {
+                messageBox.style.display = 'none';
+            }
+        }, 3000);
+    </script>
+@endif
+
 <div class="container mt-7">
 
     <div class="flex flex-row pl-60 gap-5 mb-9">

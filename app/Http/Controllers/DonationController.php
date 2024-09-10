@@ -23,28 +23,28 @@ class DonationController extends Controller
 
 
     public function store(Request $request){
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email',
-            'password' => 'required|min:6',
-            'cpswd' => 'required|same:password',
-           
-        ]);
+        // Validate the input fields
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|unique:users,email', // Check if the email already exists
+        'password' => 'required|min:6',
+        'cpswd' => 'required|same:password', // Ensure the password confirmation matches
+    ], [
+        'email.unique' => 'This email is already registered. Please use another email.', // Custom message
+        'cpswd.same' => 'Password confirmation does not match.', // Custom message for password confirmation
+    ]);
 
-        $user = User::create([
-            'name'=>$request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password), // Encrypt the password before storing it
-            'user_type_id'=>2,
-        ]);
+    // Create the user
+    $user = User::create([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => bcrypt($request->password), // Encrypt the password before storing
+        'user_type_id' => 2, // Assign user type
+    ]);
+
+    // Redirect to the signin route with success message
+    return redirect()->route('signin')->with('success', 'Account created successfully! Please sign in.');
     
-        // Redirect to a desired route with a success message
-        return redirect()->route('signin');
 
-
-        // return redirect()->route('signin'); 
-    }
-
-    
-
+}
 }

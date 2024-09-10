@@ -40,7 +40,10 @@
         </form>
 
         <form method="GET" style="display: inline">
-            <button type="submit" class="bg-red-800 w-16 h-10 rounded-lg hover:bg-orange-600 text-white">Refresh</button>
+            <button type="submit" class="bg-red-800 w-16 h-10 rounded-lg hover:bg-orange-600 text-white">
+                <span class="en">Refresh</span>
+                <span class="mm">မူလပုံစံ</span>
+            </button>
         </form>
     </div>
 
