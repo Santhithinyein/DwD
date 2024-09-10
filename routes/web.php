@@ -103,9 +103,12 @@ Route::get('/users',[UserController::class,'index'])->name('users');
 Route::get('users/export/', [UserController::class, 'export'])->name('users.export');
 Route::post('/mail/{id}',[UserController::class,'sendMail'])->name('mail');
 Route::post('/event',[])->name('event');
+
 Route::get('/doners',[DonerController::class,'index'])->name('doners');
-Route::post('/doners/search',[DonerController::class,'index'])->name('doners.search');
-Route::post('/doners/filter',[DonerController::class,'filter'])->name('doners.filter');
+Route::get('/doners/search',[DonerController::class,'index'])->name('doners.index');
+// Route::post('/doners/search',[DonerController::class,'index'])->name('doners.search');
+// Route::post('/doners/filter',[DonerController::class,'filter'])->name('doners.filter');
+
 Route::get('/doners/export/', [DonerController::class, 'export'])->name('doners.export');
 
 require __DIR__.'/auth.php';

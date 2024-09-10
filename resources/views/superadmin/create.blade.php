@@ -28,7 +28,9 @@
                 <select name="user_type_id" id="user_type_id"
                     class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-gray-50 text-pink-500">
                     @foreach($userTypes as $type)
-                        <option value="{{ $type->id }}" class="text-pink-500">{{ $type->type }}</option>
+                        @if ($type->id > 2)
+                            <option value="{{ $type->id }}" class="text-pink-500">{{ $type->type }}</option>
+                        @endif
                     @endforeach
                 </select>
             </div>

@@ -1,6 +1,11 @@
 <x-admin-layout>
     <div class="container mx-auto px-4 py-6">
         <h1 class="text-2xl font-semibold mb-4">Finance List</h1>
+        @if (session('success'))
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+                {{ session('success') }}
+            </div>
+        @endif
         @canany(['admin', 'management'])
             <div class="flex space-x-2">
                 <a href="{{ route('finances.create') }}" 
@@ -23,6 +28,7 @@
                         <th class="py-3 px-4 border-b">Department Name</th>
                         <th class="py-3 px-4 border-b">Date</th>
                         <th class="py-3 px-4 border-b">Amount</th>
+                        <th class="py-3 px-4 border-b">Monastery</th>
                        
                         @canany(['admin', 'management'])
                             <th class="py-3 px-4 border-b">Action</th>
@@ -38,7 +44,9 @@
                         <td class="py-2 px-4">{{ $counter++ }}</td>
                         <td class="py-2 px-4">{{ $finance->name }}</td>
                         <td class="py-2 px-4">{{ $finance->created_at->format('d-m-Y') }}</td>
-                        <td class="py-2 px-4">{{ $finance->amount }}</td>                        
+                        <td class="py-2 px-4">{{ $finance->amount }}</td>
+                        <td class="py-2 px-4">{{ $finance->fmonastery }}</td>
+                          
                         @canany(['admin', 'management'])
                             <td class="py-2 px-4 flex space-x-2">
                                 <a href="{{ route('finances.edit', $finance->id) }}" class="text-yellow-500 hover:text-yellow-700">

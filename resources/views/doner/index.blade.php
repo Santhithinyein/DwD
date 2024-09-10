@@ -15,10 +15,9 @@
     <div class="max-w-full mx-auto bg-white bg-opacity-50 p-4 rounded-lg shadow-lg">
         <h2 class="text-2xl font-semibold mb-5">Donors List</h2>
             
-        @canany(['admin', 'religious'])
+        {{-- @canany(['admin', 'religious'])
             <div class="flex justify-between items-center mb-4">
-                {{-- <h2 class="text-lg font-semibold">Donors List</h2> --}}
-
+                
                 <div class="mx-2">
                     <form action="{{route('doners.filter')}}" method="post">
                         @csrf
@@ -48,7 +47,42 @@
                 </div>
             </div>
             
-        @endcanany
+        @endcanany --}}
+        @canany(['admin', 'religious'])
+        <div class="flex justify-between items-center mb-4">
+            {{-- <h2 class="text-lg font-semibold">Donors List</h2> --}}
+
+            <div class="mx-2">
+                <form action="{{route('doners.index')}}" method="get">
+                    @csrf
+                    <label for="" class="font-semibold">Start Date</label>
+                    <input type="date" name="start_date" id="" class="py-2 rounded-lg border" value="{{request()->input('start_date')}}">
+                    <label for="" class="font-semibold" >End Date</label>
+                    <input type="date" name="end_date" id="" class="py-2 rounded-lg border" value="{{request()->input('end_date')}}">
+                    <button type="submit" name="action" value="filter" class="inline-block px-4 py-2
+                    text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600">Filter</button>
+
+                    {{-- <div class="mx-2 ml-auto"> --}}
+                
+                        <input type="text" name="search" class="py-2 rounded-lg pl-3 border" placeholder="Search Doners" value="{{request()->input('search')}}">
+                        <button type="submit" name="action" value="search" class="inline-block px-4 py-2
+                        text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600">Search</button>
+                    
+                    {{-- </div> --}}
+                </form>
+            </div>
+           
+            <div class="py-2 mr-2">
+                <a href="{{route('doners')}}" class="inline-block px-4 py-2
+                text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600">Refresh</a>
+            </div>
+            <div class="py-2">
+                <a href="{{route('doners.export')}}" class="inline-block px-4 py-2
+                text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600">Excel Export</a>
+            </div>
+        </div>
+        
+    @endcanany
         
         <div class="overflow-x-auto">
             <table class="min-w-full bg-white border border-gray-300">
@@ -67,6 +101,7 @@
                 </thead>
                 <tbody>
                     @foreach ($doners as $key => $doner)
+                    
                         <tr class="hover:bg-gray-100 text-center">
                             <td class="py-2 px-4 border-b">{{ $doners->firstItem() + $key }}</td>
                             <td class="py-2 px-4 border-b">{{ $doner->created_at->format('d-m-Y') }}</td>
@@ -80,8 +115,10 @@
                                         text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600 text-sm">View</button>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm border-b">
-                                    <form action="{{ route('mail', $doner->user->id) }}" method="post">
+                                    <form action="{{ route('mail', $doner->user_id) }}" method="post">
+                                       
                                         @csrf
+                                       
                                         <button class="inline-block px-4 py-2
                                         text-white bg-gradient-to-r from-red-600 to-orange-500 rounded-lg shadow-lg hover:from-red-700 hover:to-orange-600 transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600 text-sm">Send Mail</button>
                                     </form>
@@ -103,7 +140,9 @@
         </div>
     </div>
     <div class="mt-4">
-        {{ $doners->links('vendor.pagination.tailwind') }}
+        {{-- {{ $doners->links('vendor.pagination.tailwind') }} --}}
+        {{ $doners->appends(request()->query())->links() }}
+
     </div>
         
 </x-admin-layout>

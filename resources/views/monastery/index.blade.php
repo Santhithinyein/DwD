@@ -2,6 +2,11 @@
 <x-admin-layout>
     <div class="container mx-auto px-4">
         <h1 class="text-3xl font-bold mb-6 mt-8">Monasteries</h1>
+        @if (session('success'))
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+                {{ session('success') }}
+            </div>
+        @endif
         @canany(['admin', 'religious'])
             <div class="mb-4 flex items-center justify-between">
                 <a href="{{ route('monasteries.create') }}" class="inline-block px-4 py-2

@@ -24,10 +24,11 @@ class FinanceController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'amount' => 'required|numeric',
+            'fmonastery' => 'required|string',
         ]);
 
         Finance::create($request->all());
-        return redirect()->route('finances.index')->with('success', 'Finance created successfully.');
+        return redirect()->route('finances.index')->with('success', 'Department data created successfully.');
     }
 
     public function edit(Finance $finance)
@@ -40,15 +41,16 @@ class FinanceController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'amount' => 'required|numeric',
+            'fmonastery' => 'required|string',
         ]);
 
         $finance->update($request->all());
-        return redirect()->route('finances.index')->with('success', 'Finance updated successfully.');
+        return redirect()->route('finances.index')->with('success', 'Department data updated successfully.');
     }
 
     public function destroy(Finance $finance)
     {
         $finance->delete();
-        return redirect()->route('finances.index')->with('success', 'Finance deleted successfully.');
+        return redirect()->route('finances.index')->with('success', 'Department data successfully.');
     }
 }
