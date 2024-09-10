@@ -4,7 +4,7 @@
     <div class="head_container">
         <div class="box">
             <div class="text">
-                <h5 class="text-grey-300">
+                <h5 class="">
                     <span class="en">Welcome To</span>
                     <span class="mm">ကြိုဆိုပါတယ်</span>
                 </h5>
@@ -13,7 +13,7 @@
                     <span class="mm">စေတနာဖြင့်လှူဒါန်းခြင်း မှ</span>
                 </p>
                 <form action="{{route('donate')}}">
-                <button type="submit" class="DBtn">
+                <button type="submit" class="DBtn font-bold">
                     <span class="en">Donate Now</span>
                     <span class="mm">လှူဒါန်းရန်</span></button>
             </form>
@@ -22,7 +22,7 @@
     </div>
 
     <div class="image">
-        <img src="/images/dbg4.jpg" alt="" class="slide">
+        <img src="/images/pyay.jpg" alt="" class="slide">
     </div>
 
 </section>

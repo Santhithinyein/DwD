@@ -9,7 +9,7 @@
             <div class="flex flex-wrap -m-4">
                 <div class="p-4">
                     <div class="h-full border-2 border-white border-opacity-60 rounded-lg overflow-hidden">
-                        <img src="/images/donate7.jpg" alt="image"
+                        <img src="/images/kt5.png" alt="image"
                             class="lg:h-72 md:h-48 w-full object-cover object-center">
                         <div class="p-6">
                             <p class="leading-relaxed mb-3" style="text-align: justify;">

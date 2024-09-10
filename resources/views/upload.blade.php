@@ -45,7 +45,7 @@
             <div class="flex flex-warp -m-4">
                 <div class="p-5">
                     <div class="h-full border-2 border-white rounded-lg overflow-hidden">
-                        <img src="/Images/vb.jpg" alt="image"
+                        <img src="/Images/donate7.jpg" alt="image"
                             class="lg:h-72 md:h-48 w-full object-cover object-center">
                         <div class="p-6">
                             <!-- hover:bg-indigo-700 hover:text-white transition duration-300 ease-in -->

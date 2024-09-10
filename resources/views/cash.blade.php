@@ -16,7 +16,7 @@
             <div class="flex flex-warp -m-4">
                 <div class="p-4">
                     <div class="h-full border-4 border-white border-opacity-60 rounded-lg overflow-hidden">
-                        <img src="/images/donate7.jpg" alt="image"
+                        <img src="/images/kt3.jpg" alt="image"
                             class="lg:h-72 md:h-48 w-full object-cover object-center">
                         <div class="p-6">
                             <!-- hover:bg-indigo-700 hover:text-white transition duration-300 ease-in -->

@@ -25,7 +25,7 @@
 
             <!-- Card 2 -->
             <div class="mr-48">
-                <img src="/Images/vb.jpg" alt="Photo 2" class="w-full h-80 border rounded-lg">
+                <img src="/Images/donate7.jpg" alt="Photo 2" class="w-full h-80 border rounded-lg">
             </div>
         </div>
     </div>
