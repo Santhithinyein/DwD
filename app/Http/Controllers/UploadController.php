@@ -23,7 +23,7 @@ class UploadController extends Controller
 {
     // Validate the incoming request data
     $validated = $request->validate([
-        'image' => 'required|image|mimes:jpeg,png,jpg|max:2048', 
+        'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
     ]);
 
     // Handle the file upload
@@ -34,12 +34,12 @@ class UploadController extends Controller
             'transaction_type_id' => $request->payment,
             'receivePhoto' => $request->file('image')->store('uploads', 'public'),
             'amount' => $request->price,
-            
+
         ]);
-      
+
 
         // Redirect with success message
-        return back()->with(['success' => 'Your donation has been successfully recorded.']);
+        return redirect()->route('home')->with('success', 'Your donation has been successfully recorded.');
     }
 
     // If no image was uploaded, return an error message

@@ -89,3 +89,8 @@
 </section>
 <script src="/js/home.js"></script>
 <x-footer/>
+<script>
+    @if (session('success'))
+        alert('{{ session('success') }}');
+    @endif
+</script>

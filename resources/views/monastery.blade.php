@@ -102,7 +102,8 @@
                     {{ $monastery->address }}
                 </p>
                 <p class="text-red-800 mb-5 font-semibold" id="{{ $monastery->id }}">
-                    သံဃာတော်အပါးအရေအတွက် : <b>{{ $monastery->monkNo }}</b>
+                    <span class="en">Monk Numbers : <b>{{ $monastery->monkNo }}</b></span>
+                        <span class="mm">သံဃာတော်အပါးအရေအတွက် : <b>{{ $monastery->monkNo }}</b></span>
                 </p>
                 <input type="hidden" name="status" value="{{  $monastery->mStatus }}">
             </div>
