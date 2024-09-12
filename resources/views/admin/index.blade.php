@@ -2,30 +2,13 @@
     <div class="">
         <div class="flex-1 flex flex-col ">
             <!-- Include Top Nav with Gradient here -->
-            {{-- <div class="flex items-center justify-between h-16 bg-gradient-to-r from-purple-600 to-indigo-600 px-6 text-white">
-                <div class="text-xl font-semibold">Dashboard</div>
-                <div class="flex items-center space-x-6">
-                    <div class="relative">
-                        <input type="text" placeholder="Search..." class="px-3 py-2 border-none rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-indigo-300">
-                    </div>
-                    <div class="relative">
-                        <button class="text-white hover:text-gray-300">
-                            <!-- Custom Icon for Notifications -->
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-1h-1v1H9v-1H8v1H7v-2h1v-2h1v-1h1v-2H9V9h1V7h1V6h2v1h1v1h1v1h1v1h1v2h-1v1h-1v2h1v2h1v2h-3v-2h-2v2z" />
-                            </svg>
-                        </button>
-                        <!-- Notifications dropdown -->
-                    </div>
-                    <div class="relative">
-                        <button class="flex items-center text-white hover:text-gray-300">
-                            <span class="mr-2">John Doe</span>
-                            <img src="https://via.placeholder.com/150" class="w-8 h-8 rounded-full shadow-lg" alt="User Avatar">
-                        </button>
-                        <!-- Profile dropdown -->
-                    </div>
+            <div class="flex items-center justify-between h-16 bg-gradient-to-r from-purple-400 to-indigo-500 px-6 text-white overflow-hidden">
+                <div id="floating-message" class="animate-pulse whitespace-nowrap">
+                  <p>Top Donor: {{ $topDonor->user->name }} donated ${{ number_format($topDonor->amount) }}</p>
                 </div>
-            </div> --}}
+              </div>
+              
+            
             <!-- Include Main Content Area with Gradient Cards here -->
             <div class="flex-1 p-8 ">
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -186,6 +169,7 @@
             a.download = 'chart.png';
             a.click();
         });
+
     </script>
 
 

@@ -18,9 +18,12 @@ class AdminController extends Controller
             $total+=$doner->amount;
         }
 
-        $donersCount=$doners->count();
+        $donersCount = Doner::distinct('user_id')->count('id');
+
+        $topDonor = Doner::orderBy('amount', 'desc')->first();
+
         $recentDoners = Doner::orderBy('created_at', 'desc')->take(5)->get();
         
-        return view('admin.index',compact('doners','donersCount','total','recentDoners','user'));
+        return view('admin.index',compact('doners','donersCount','total','recentDoners','user','topDonor'));
     }
 }

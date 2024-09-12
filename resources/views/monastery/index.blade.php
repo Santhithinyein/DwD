@@ -44,7 +44,7 @@
                         {{-- <th class="py-2 px-4 border-b">Building</th> --}}
                         <th class="py-2 px-4 border-b">Monk Number</th>
                         <th class="py-2 px-4 border-b">Status</th>
-                        <th class="py-2 px-4 border-b">Photo</th>
+                        {{-- <th class="py-2 px-4 border-b">Photo</th> --}}
                         @canany(['admin', 'religious'])
                             <th class="py-2 px-4 border-b">Actions</th>
                         @endcanany
@@ -62,7 +62,7 @@
                         <td class="py-2 px-4 border-b">{{ $monastery->monkNo }}</td>
                         <td class="py-2 px-4 border-b {{ $monastery->mStatus ? 'text-green-400' : 'text-red-400' }}">{{ $monastery->mStatus ? 'Celeberated' : 'Unceleberated' }}</td>
 
-                        <td class="py-2 px-4 border-b"><img src="{{ $monastery->photo }}" alt="Photo" class="w-16 h-16"></td>
+                        {{-- <td class="py-2 px-4 border-b"><img src="{{ $monastery->photo }}" alt="Photo" class="w-16 h-16"></td> --}}
                         
                         @canany(['admin', 'religious'])
                             <td class="py-2 px-4 border-b flex space-x-2">

@@ -49,10 +49,10 @@
                         <option value="0" {{ $monastery->mStatus == 0 ? 'selected' : '' }}>Uncelebrated</option>
                     </select>
                 </div>
-                <div class="mb-4">
+                {{-- <div class="mb-4">
                     <label class="block text-gray-700 text-lg">Photo:</label>
                     <input type="text" name="photo" value="{{ $monastery->photo }}" class="w-full p-2 border-b-2 border-red-500">
-                </div>
+                </div> --}}
             </div>
             <div class="flex space-x-2">
                 <button type="submit" class="inline-block px-4 py-2

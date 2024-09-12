@@ -69,13 +69,13 @@
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="mb-4 col-span-2">
+                {{-- <div class="mb-4 col-span-2">
                     <label class="block text-orange-800 text-lg">Photo:</label>
                     <input type="text" name="photo" class="w-full p-2 border rounded" value="{{ old('photo') }}">
                     @error('photo')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
-                </div>
+                </div> --}}
             </div>
             <div class="flex space-x-2 mt-4 justify-end">
                 <button type="submit" class="inline-block px-4 py-2
