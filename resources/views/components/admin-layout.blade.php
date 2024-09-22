@@ -21,14 +21,7 @@
               test:'#708d81'
               
             },
-            animation: {
-        slide: 'slide 10s linear infinite',
-      },
-      keyframes: {
-        slide: {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(-100%)' },
-        },
+            
           }
         }
       }
@@ -79,6 +72,7 @@
   
     
     <div class="relative w-full h-screen overflow-hidden bg-[url('/images/dbg4.jpg')] bg-cover">
+    {{-- <div class="relative w-full h-screen overflow-hidden"> --}}
       {{-- <video autoplay  muted playsinline class="absolute inset-0 w-full h-full object-cover">
         <source src="https://vxrcel-studio.vercel.app/abstract.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -95,14 +89,17 @@
           <x-admin-sidebar :user="auth()->user()"/>
           
           
-          {{-- <div class="h-screen overflow-y-auto w-full px-5 py-3 bg-gradient-to-b from-[#f4f8c1] to-[#f19e50] min-h-screen shadow-lg">
-            {{$slot}}
-            
-          </div> --}}
-          <div class="h-screen overflow-y-auto w-full px-5 py-3 bg-gradient-to-b from-[#f4f8c1] to-[#f19e50]  min-h-screen shadow-lg">
+          <div class="h-screen overflow-y-auto w-full px-5 py-3 bg-gradient-to-b from-[#f4f8c1] to-[#f19e50] min-h-screen shadow-lg">
             {{$slot}}
             
           </div>
+          {{-- @can('religious')
+          <div class="h-screen overflow-y-auto w-full px-5 py-3 bg-gradient-to-b from-[#f4f8c1] to-[#dfd333]  min-h-screen shadow-lg">
+            {{$slot}}
+            
+          </div>
+              
+          @endcan --}}
           
           {{-- <x-admin-event/> --}}
       </div>

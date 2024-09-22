@@ -85,7 +85,7 @@
                         <img src="/images/pf1.png" alt="" srcset="" id="profile-pic">
                         <label for="input-file">
                             <span class="en">Upload Image</span>
-                            <span class="mm">ပုံတင်ပါ</span>
+                            <span class="mm">အထောက်အထားတင်ပြရန်</span>
                                 <ion-icon name="camera" class="i text-red-800 text-2xl px-2"></ion-icon>
                         </label>
                         <input type="file" name="image" accept="image/jpeg, image/png, image/jpg" id="input-file" style="display:none;">

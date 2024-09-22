@@ -8,7 +8,7 @@
                             Feature/Section
                         </th>
                         <th scope="col" class="px-6 py-3 text-left font-bold uppercase tracking-wider">
-                            Admin
+                            Ministery of Religious Affair
                         </th>
                         <th scope="col" class="px-6 py-3 text-left font-bold uppercase tracking-wider">
                             Religious Admin

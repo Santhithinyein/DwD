@@ -1,6 +1,6 @@
 
 @props(['user'])
-<nav class="w-60 glass rounded-l-lg">
+<nav class="w-60 rounded-l-lg">
   <a href="{{route('profile.edit')}}">
     <img src="/images/c.jpg" alt="Profile Picture" class="h-24 w-24 rounded-full mx-auto mt-5 border-2 border-[#bb4c05] shadow-lg">
   

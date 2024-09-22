@@ -39,6 +39,7 @@
                             <tbody>
 
                                 @foreach ($recentDoners as $recentDoner)
+                                {{-- @dd($recentDoner->user->name) --}}
 
                                     <tr>
                                         {{-- <td class="border px-4 py-2">{{$recentDoner->id}}</td> --}}
